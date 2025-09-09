@@ -6,7 +6,7 @@
 /*   By: pecavalc <pecavalc@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 13:07:59 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/09 15:53:34 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/09 16:34:49 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,6 @@ typedef struct s_map
 	t_vertex	**vertices;
 }	t_map;
 
-t_map	load_map(char *filepath); 
+t_map	*load_map(char *filepath); 
 
 #endif
