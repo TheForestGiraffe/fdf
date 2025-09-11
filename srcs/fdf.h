@@ -6,7 +6,7 @@
 /*   By: pecavalc <pecavalc@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 13:07:59 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/09 16:34:49 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/11 12:48:09 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef struct s_vertex
 typedef struct s_map
 {
 	int			nr_rows;
-	int			nr_cols;
+	int			nr_columns;
 	t_vertex	**vertices;
 }	t_map;
 
