@@ -6,7 +6,7 @@
 #    By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/07 15:25:57 by pecavalc          #+#    #+#              #
-#    Updated: 2025/09/09 16:56:45 by pecavalc         ###   ########.fr        #
+#    Updated: 2025/09/11 12:56:44 by pecavalc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ CFLAGS = -Wall -Wextra -Werror -I$(HEADER_DIR) -I$(LIBFT_HEADER_DIR) \
 all: $(NAME)
 
 $(NAME): $(OBJS) $(HEADER) $(LIBFT) $(LIBMLX)
-	cc $(CFLAGS) $(OBJS) -o $(NAME)
+	cc $(CFLAGS) $(OBJS) $(LIBFT) $(LIBMLX) -o $(NAME)
 
 $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c
 	mkdir -p $(OBJS_DIR)
