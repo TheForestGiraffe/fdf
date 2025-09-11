@@ -6,29 +6,38 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/07 15:24:38 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/11 19:14:23 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/12 01:40:09 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include <stdlib.h>
 #include "libft.h"
+#include "fdf_map.h"
 
-void	print_map(t_map *map);
+void	print_map(t_map *map); //TODO
+
+static void	validate_nr_args(int argc);
 
 int main(int argc, char **argv)
 {
 	t_map	*map;
 
-	if (argc != 2)
-	{
-		ft_putstr_fd("main.c: invalid number of input arguments.", 2);
-		return (1);
-	}
+	validate_nr_args(argc);
 	map = load_map(argv[1]);
 
 	print_map(map); //TODO: remove test
+	free_map_vertices(map);
 
 	return 0;
+}
+
+static void	validate_nr_args(int argc)
+{
+	if (argc != 2)
+	{
+		ft_putstr_fd("main.c: invalid number of input arguments.", 2);
+		exit(EXIT_FAILURE);
+	}
 }
 
 void	print_map(t_map *map)
