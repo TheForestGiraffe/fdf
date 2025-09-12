@@ -6,7 +6,7 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 15:55:39 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/12 01:06:39 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/12 02:37:54 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static void	set_map_xyz(int fd, char *line, t_map *map)
 			x++;
 		}
 		x = 0;
-		while (x < map->nr_columns)
+		while (split_line[x])
 			free(split_line[x++]);
 		free(split_line);
 		line = get_next_line(fd);
