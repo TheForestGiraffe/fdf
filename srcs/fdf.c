@@ -6,7 +6,7 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/07 15:24:38 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/12 01:40:09 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/12 01:48:08 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,10 @@ int main(int argc, char **argv)
 	map = load_map(argv[1]);
 
 	print_map(map); //TODO: remove test
-	free_map_vertices(map);
 
+	free_map_vertices(map);
+	free(map);
+	
 	return 0;
 }
 
