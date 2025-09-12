@@ -6,7 +6,7 @@
 #    By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/07 15:25:57 by pecavalc          #+#    #+#              #
-#    Updated: 2025/09/12 01:43:37 by pecavalc         ###   ########.fr        #
+#    Updated: 2025/09/12 02:45:11 by pecavalc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ LOAD_MAP_HEADERS = $(PUB_LOAD_MAP_HEADER_DIR)/fdf_map.h \
 				   $(PRIV_LOAD_MAP_HEADER_DIR)/fdf_map_internal.h
 
 # Libft
-LIBFT_DIR = libs/Libft-2.0.0
+LIBFT_DIR = libs/Libft-2.0.1
 LIBFT_HEADER_DIR = $(LIBFT_DIR)/include
 LIBFT = $(LIBFT_DIR)/libft.a
 
@@ -49,14 +49,14 @@ CFLAGS = -Wall -Wextra -Werror -I$(HEADER_DIR) -I$(PUB_LOAD_MAP_HEADER_DIR) \
 
 all: $(NAME)
 
-$(NAME): $(OBJS) $(LOAD_MAP_OBJS) $(HEADER) $(LOAD_MAP_HEADERS) $(LIBFT) $(LIBMLX)
+$(NAME): $(OBJS) $(LOAD_MAP_OBJS) $(LIBFT) $(LIBMLX)
 	cc $(CFLAGS) $(OBJS) $(LOAD_MAP_OBJS) $(LIBFT) $(LIBMLX) -o $(NAME)
 
-$(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c
+$(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c $(HEADER)
 	mkdir -p $(OBJS_DIR)
 	cc $(CFLAGS) -c $< -o $@
 
-$(LOAD_MAP_OBJS_DIR)/%.o: $(LOAD_MAP_SRCS_DIR)/%.c
+$(LOAD_MAP_OBJS_DIR)/%.o: $(LOAD_MAP_SRCS_DIR)/%.c $(LOAD_MAP_HEADERS)
 	mkdir -p $(LOAD_MAP_OBJS_DIR)
 	cc $(CFLAGS) -c $< -o $@
 

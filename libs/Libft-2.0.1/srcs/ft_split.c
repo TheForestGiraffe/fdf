@@ -6,7 +6,7 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/19 15:41:03 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/05/22 16:24:04 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/12 02:00:51 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,6 @@ void	free_all_previous(char **str_ptrs_array, size_t j)
 
 	i = 0;
 	while (i < j)
-		free(str_ptrs_array[j]);
+		free(str_ptrs_array[i]);
 	free(str_ptrs_array);
 }
