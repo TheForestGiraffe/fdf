@@ -6,7 +6,7 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 15:55:39 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/12 01:06:04 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/12 02:27:38 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,10 @@ static void count_and_set_nr_rows(char *line, int fd, t_map *map)
 	while (line)
 	{
 		if (line[0] == '\0' || line[0] == '\n')
+		{
+			free(line);
 			break ;
+		}
 		map->nr_rows++;
 		free(line);
 		line = get_next_line(fd);
