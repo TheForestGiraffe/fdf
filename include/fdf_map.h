@@ -16,8 +16,8 @@
 // t_vertex: stores the attributes of a data point.
 typedef struct s_vertex
 {
-	int	x;
-	int	y;
+    int x;
+    int y;
 	int	z;
 }	t_vertex;
 

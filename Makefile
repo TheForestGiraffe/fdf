@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+         #
+#    By: plima <plima@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/07 15:25:57 by pecavalc          #+#    #+#              #
-#    Updated: 2025/09/12 02:45:11 by pecavalc         ###   ########.fr        #
+#    Updated: 2025/09/15 11:32:12 by plima            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = fdf
 
 SRCS_DIR = srcs
 OBJS_DIR = objs
-SRCS = $(addprefix $(SRCS_DIR)/, fdf.c)
+SRCS = $(addprefix $(SRCS_DIR)/, fdf.c free_maps.c project_map.c)
 OBJS = $(patsubst $(SRCS_DIR)/%.c, $(OBJS_DIR)/%.o, $(SRCS))
 HEADER_DIR = include
 HEADER = $(HEADER_DIR)/fdf.h
@@ -34,7 +34,7 @@ LOAD_MAP_HEADERS = $(PUB_LOAD_MAP_HEADER_DIR)/fdf_map.h \
 				   $(PRIV_LOAD_MAP_HEADER_DIR)/fdf_map_internal.h
 
 # Libft
-LIBFT_DIR = libs/Libft-2.0.1
+LIBFT_DIR = libs/Libft-2.0.2
 LIBFT_HEADER_DIR = $(LIBFT_DIR)/include
 LIBFT = $(LIBFT_DIR)/libft.a
 
