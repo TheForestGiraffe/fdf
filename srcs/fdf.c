@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: plima <plima@student.42.fr>                +#+  +:+       +#+        */
+/*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/07 15:24:38 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/15 11:31:05 by plima            ###   ########.fr       */
+/*   Updated: 2025/09/16 17:14:12 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "mlx.h"
 #include "libft.h"
 #include "fdf_map.h"
 #include "fdf.h"
@@ -22,17 +23,22 @@ static void	validate_nr_args(int argc);
 
 int main(int argc, char **argv)
 {
-	t_map		*map;
-	t_proj_map	*proj_map;
+	t_app		app;
+	
+	validate_nr_args(argc); // TODO: MOVE?
+	app.map = load_map(argv[1]);
+	app.proj_map = project_map(app.map);
 
-	validate_nr_args(argc);
-	map = load_map(argv[1]);
-	proj_map = project_map(map);
+	init_mlx(&app);
+	setup_mlx_hooks(&app);
+	init_mlx_img(&app);
+	render_proj_map(&app);
 
-	print_map(map); //TODO: remove test
-	print_proj_map(proj_map); //TODO: remove test
+	print_map(app.map);
+	print_proj_map(app.proj_map);
 
-	free_maps(map, proj_map);
+	mlx_loop(app.mlx);
+	
 	return 0;
 }
 
@@ -45,6 +51,7 @@ static void	validate_nr_args(int argc)
 	}
 }
 
+// TODO: Remove/Move
 void	print_map(t_map *map)
 {
 	int	x;

@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   project_map.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: plima <plima@student.42.fr>                +#+  +:+       +#+        */
+/*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 15:55:39 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/15 11:36:44 by plima            ###   ########.fr       */
+/*   Updated: 2025/09/16 17:59:15 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <math.h>
 #include "libft.h"
 #include "fdf_map.h"
 #include "fdf.h"
@@ -83,19 +84,26 @@ static void	try_init_proj_map_vertices(t_map *map, t_proj_map *proj_map)
 
 static void	fill_proj_map(t_map *map, t_proj_map *proj_map)
 {
+	int		i;
+	int		j;
 	int		x;
 	int		y;
+	int		z;
 	
-	y = 0;
-	while (y < proj_map->nr_rows)
+	i = 0;
+	while (i < proj_map->nr_rows)
 	{
-		x = 0;
-		while (x < proj_map->nr_columns)
+		j = 0;
+		while (j < proj_map->nr_columns)
 		{
-			proj_map->proj_vertices[y][x].x = map->vertices[y][x].x; // TODO
-			proj_map->proj_vertices[y][x].y = map->vertices[y][x].y; // TODO
-			x++;
+			x = map->vertices[i][j].x;
+			y = map->vertices[i][j].y;
+			z = map->vertices[i][j].z;
+			proj_map->proj_vertices[i][j].x = (x - y) * cos(M_PI/6);
+			proj_map->proj_vertices[i][j].y = (x + y) * sin(M_PI/6) - z;
+			proj_map->proj_vertices[i][j].color = 0x00FFFFFF;
+			j++;
 		}
-		y++;
+		i++;
 	}
 }

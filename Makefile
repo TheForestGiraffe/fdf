@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: plima <plima@student.42.fr>                +#+  +:+       +#+         #
+#    By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/07 15:25:57 by pecavalc          #+#    #+#              #
-#    Updated: 2025/09/15 11:32:12 by plima            ###   ########.fr        #
+#    Updated: 2025/09/16 17:24:29 by pecavalc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,13 @@ NAME = fdf
 
 SRCS_DIR = srcs
 OBJS_DIR = objs
-SRCS = $(addprefix $(SRCS_DIR)/, fdf.c free_maps.c project_map.c)
+SRCS = $(addprefix $(SRCS_DIR)/, fdf.c \
+								 free_maps.c \
+								 init_mlx.c \
+								 init_mlx_img.c \
+								 project_map.c \
+								 render_proj_map.c \
+								 setup_mlx_hooks.c)
 OBJS = $(patsubst $(SRCS_DIR)/%.c, $(OBJS_DIR)/%.o, $(SRCS))
 HEADER_DIR = include
 HEADER = $(HEADER_DIR)/fdf.h
@@ -50,7 +56,8 @@ CFLAGS = -Wall -Wextra -Werror -I$(HEADER_DIR) -I$(PUB_LOAD_MAP_HEADER_DIR) \
 all: $(NAME)
 
 $(NAME): $(OBJS) $(LOAD_MAP_OBJS) $(LIBFT) $(LIBMLX)
-	cc $(CFLAGS) $(OBJS) $(LOAD_MAP_OBJS) $(LIBFT) $(LIBMLX) -o $(NAME)
+	cc $(CFLAGS) $(OBJS) $(LOAD_MAP_OBJS) $(LIBFT) $(LIBMLX) -lX11 -lXext -lm \
+	-o $(NAME)
 
 $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c $(HEADER)
 	mkdir -p $(OBJS_DIR)

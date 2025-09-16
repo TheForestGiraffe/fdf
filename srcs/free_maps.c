@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free_maps.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: plima <plima@student.42.fr>                +#+  +:+       +#+        */
+/*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 10:30:23 by plima             #+#    #+#             */
-/*   Updated: 2025/09/15 10:58:14 by plima            ###   ########.fr       */
+/*   Updated: 2025/09/16 11:35:36 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 #include "fdf_map.h"
 
 static void free_proj_map_vertices(t_proj_map *proj_map);
+
+// Frees all fully initialized maps
 
 void    free_maps(t_map *map, t_proj_map *proj_map)
 {

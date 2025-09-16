@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: plima <plima@student.42.fr>                +#+  +:+       +#+        */
+/*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 13:07:59 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/15 11:31:34 by plima            ###   ########.fr       */
+/*   Updated: 2025/09/16 18:00:46 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,19 @@
 
 #include "fdf_map.h"
 
+# ifndef M_PI
+#  define M_PI 3.14159265358979323846
+# endif
+
+// t_proj_vertex: stores the attributes of a projected data point.
 typedef struct s_proj_vertex
 {
-	int	x;
-	int y;
+	double				x;
+	double				y;
+	unsigned int	color;
 }	t_proj_vertex;
 
+// t_proj_map: stores the attributes of a projected map file.
 typedef struct s_proj_map
 {
 	int				nr_rows;
@@ -28,7 +35,28 @@ typedef struct s_proj_map
 	t_proj_vertex	**proj_vertices;
 }	t_proj_map;
 
+// t_env: stores the application data and state variables
+typedef struct s_app
+{
+	void		*mlx;
+	void		*window;
+	void		*img;
+	char		*img_address;
+	int			bits_per_pixel;
+	int			size_line;
+	int			endian;
+	int			width;
+	int			height;
+	int			zoom;
+	t_map		*map;
+	t_proj_map	*proj_map;
+}	t_app;
+
 t_proj_map	*project_map(t_map *map);
 void		free_maps(t_map *map, t_proj_map *proj_map);
+void 		init_mlx(t_app *app);
+void		setup_mlx_hooks(t_app *app);
+void		init_mlx_img(t_app *app);
+void		render_proj_map(t_app *app);
 
 #endif
