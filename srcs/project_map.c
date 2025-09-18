@@ -6,7 +6,7 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 15:55:39 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/18 15:40:21 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/18 19:30:56 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ static void	fill_proj_map(t_map *map, t_proj_map *proj_map)
 	float	z_scale;
 	
 	i = 0;
-	z_scale = 0.25;
+	z_scale = 0.1;
 	while (i < proj_map->nr_rows)
 	{
 		j = 0;
