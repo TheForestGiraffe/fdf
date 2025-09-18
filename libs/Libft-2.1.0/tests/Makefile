@@ -6,7 +6,7 @@
 #    By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/12 13:15:08 by pecavalc          #+#    #+#              #
-#    Updated: 2025/09/07 01:04:38 by pecavalc         ###   ########.fr        #
+#    Updated: 2025/09/18 13:34:35 by pecavalc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,8 @@ SRCS = test_ft_atoi.c test_ft_bzero.c \
 	   test_ft_striteri.c test_ft_strjoin.c test_ft_strlcat.c test_ft_strlcpy.c \
 	   test_ft_strlen.c test_ft_strmapi.c test_ft_strncmp.c test_ft_strnstr.c \
 	   test_ft_strrchr.c test_ft_strtrim.c test_ft_substr.c test_ft_tolower.c \
-	   test_ft_toupper.c test_get_next_line.c test_libft.c test_ft_strdup.c
+	   test_ft_toupper.c test_get_next_line.c test_libft.c test_ft_strdup.c \
+	   test_ft_swap.c
 
 OBJS = $(patsubst %.c,$(OBJS_DIR)/%.o,$(SRCS))
 

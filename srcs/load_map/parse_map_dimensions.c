@@ -6,15 +6,15 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 15:55:39 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/12 02:27:38 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/18 10:40:59 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <unistd.h>
 #include "libft.h"
-#include "fdf_map.h"
-#include "fdf_map_internal.h"
+#include "load_map.h"
+#include "load_map_internal.h"
 
 static void		count_and_set_nr_columns(char **split_line, t_map *map);
 static void		count_and_set_nr_rows(char *line, int fd, t_map *map);

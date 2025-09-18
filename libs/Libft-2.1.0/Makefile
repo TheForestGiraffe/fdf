@@ -6,7 +6,7 @@
 #    By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/12 13:15:08 by pecavalc          #+#    #+#              #
-#    Updated: 2025/09/06 23:01:25 by pecavalc         ###   ########.fr        #
+#    Updated: 2025/09/18 13:39:17 by pecavalc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ SRCS =  $(addprefix $(SRCS_DIR)/, ft_atoi.c ft_bzero.c ft_calloc.c \
 		ft_tolower.c ft_toupper.c ft_lstadd_back.c \
 		ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c \
 		ft_lstdelone.c ft_lstiter.c ft_lstlast.c \
-		ft_lstmap.c ft_lstnew.c ft_lstsize.c)
+		ft_lstmap.c ft_lstnew.c ft_lstsize.c ft_swap.c)
 
 SRCS_GNL = $(addprefix $(SRCS_DIR_GNL)/, get_next_line.c get_next_line_utils.c)
 

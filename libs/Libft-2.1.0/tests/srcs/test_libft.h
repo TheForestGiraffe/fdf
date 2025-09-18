@@ -6,7 +6,7 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 23:39:46 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/06 20:17:01 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/18 13:36:14 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ int		test_ft_putchar_fd(void);
 int		test_ft_putstr_fd(void);
 int		test_ft_putendl_fd(void);
 int		test_ft_putnbr_fd(void);
+int		test_ft_swap(void);
 
 // For get_next_line
 int		test_get_next_line(void);
@@ -69,8 +70,8 @@ void	test_x(void);
 void	test_X(void);
 void	test_p(void);
 void	test_double_percent(void);
-void	test_empty_str(void);
-void	test_null_str(void);
 void	test_all_again(void);
+//void	test_empty_str(void);
+//void	test_null_str(void);
 
 #endif

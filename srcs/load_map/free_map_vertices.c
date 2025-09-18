@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   try_get_next_line.c                                :+:      :+:    :+:   */
+/*   free_map_vertices.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 15:55:39 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/12 01:07:00 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/18 10:40:44 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "libft.h"
-#include "fdf_map.h"
-#include "fdf_map_internal.h"
+#include "load_map.h"
 
-char	*try_get_next_line(int fd, t_map *map)
+void	free_map_vertices(t_map *map)
 {
-	char	*line;
+	int	y;
 
-	line = get_next_line(fd);
-	if (!line)
+	y = map->nr_rows;
+	if (map->vertices)
 	{
-		free_map_vertices(map);
-		free(map);
-		exit(EXIT_FAILURE);
+		while (y > 0)
+		{
+			free(map->vertices[--y]);
+			map->vertices[y] = NULL;
+		}
+		free(map->vertices);
+		map->vertices = NULL;
 	}
-	return (line);
 }

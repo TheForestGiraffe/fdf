@@ -6,14 +6,14 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 15:55:39 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/12 02:37:54 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/18 10:41:07 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
-#include "fdf_map.h"
-#include "fdf_map_internal.h"
+#include "load_map.h"
+#include "load_map_internal.h"
 
 static void	set_map_xyz(int fd, char *line, t_map *map);
 

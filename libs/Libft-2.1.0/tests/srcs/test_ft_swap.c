@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   try_open.c                                         :+:      :+:    :+:   */
+/*   test_ft_swap.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/09 15:55:39 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/12 01:07:22 by pecavalc         ###   ########.fr       */
+/*   Created: 2025/05/18 20:35:41 by pecavalc          #+#    #+#             */
+/*   Updated: 2025/09/18 13:35:23 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <fcntl.h>
 #include <stdio.h>
 #include "libft.h"
-#include "fdf_map.h"
-#include "fdf_map_internal.h"
 
-int	try_open(char *filepath, t_map *map)
+int	test_ft_swap(void)
 {
-	int	fd;
+	int	a;
+	int	b;
 	
-	fd = open(filepath, O_RDONLY );
-	if (fd < 0)
-	{
-		perror("try_open");
-		free_map_vertices(map);
-		free(map);
-		exit(EXIT_FAILURE);
-	}
-	return (fd);
+	a = 348;
+	b = 209943;
+	ft_swap(&a, &b);
+	if (a != 209943)
+		return (0);
+	if (b != 348)
+		return (0);
+	return (1);
 }

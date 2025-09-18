@@ -6,7 +6,7 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 23:18:08 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/06 17:27:07 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/18 13:35:09 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,6 @@ t_list	*ft_lstnew(void *content);
 int		ft_lstsize(t_list *lst);
 char	*get_next_line(int fd);
 int		ft_printf(const char *str, ...);
+void	ft_swap(int *a, int *b);
 
 #endif

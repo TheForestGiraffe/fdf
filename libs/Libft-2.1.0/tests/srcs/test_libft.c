@@ -6,7 +6,7 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 12:16:36 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/07 00:56:19 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/18 13:33:45 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ int	main()
 	print_result(test_ft_strjoin(), "test_ft_strjoin");
 	print_result(test_ft_strtrim(), "test_ft_strtrim");
 	print_result(test_ft_split(), "test_ft_split");
+	print_result(test_ft_swap(), "test_ft_swap");
 	print_result(test_ft_itoa(), "test_ft_itoa");
 	print_result(test_ft_strmapi(), "test_ft_strmapi");
 	print_result(test_ft_striteri(), "test_ft_striteri");

@@ -6,13 +6,13 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 15:55:39 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/12 01:07:05 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/18 10:41:24 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
-#include "fdf_map.h"
+#include "load_map.h"
 
 void	try_init_map_vertices(t_map *map)
 {

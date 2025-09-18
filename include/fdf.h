@@ -6,14 +6,14 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 13:07:59 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/16 18:00:46 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/18 13:53:33 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FDF_H
 # define FDF_H
 
-#include "fdf_map.h"
+#include "load_map.h"
 
 # ifndef M_PI
 #  define M_PI 3.14159265358979323846
@@ -48,6 +48,8 @@ typedef struct s_app
 	int			width;
 	int			height;
 	int			zoom;
+	int			shift_x;
+	int			shift_y;
 	t_map		*map;
 	t_proj_map	*proj_map;
 }	t_app;
@@ -57,6 +59,5 @@ void		free_maps(t_map *map, t_proj_map *proj_map);
 void 		init_mlx(t_app *app);
 void		setup_mlx_hooks(t_app *app);
 void		init_mlx_img(t_app *app);
-void		render_proj_map(t_app *app);
 
 #endif

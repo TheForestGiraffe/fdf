@@ -6,15 +6,16 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/07 15:24:38 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/16 17:14:12 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/18 10:56:21 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "mlx.h"
 #include "libft.h"
-#include "fdf_map.h"
+#include "load_map.h"
 #include "fdf.h"
+#include "render_fdf.h"
 
 void	print_map(t_map *map); //TODO
 void	print_proj_map(t_proj_map *proj_map); //TODO
@@ -32,7 +33,7 @@ int main(int argc, char **argv)
 	init_mlx(&app);
 	setup_mlx_hooks(&app);
 	init_mlx_img(&app);
-	render_proj_map(&app);
+	render_fdf(&app);
 
 	print_map(app.map);
 	print_proj_map(app.proj_map);

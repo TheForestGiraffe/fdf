@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   try_ft_split.c                                     :+:      :+:    :+:   */
+/*   try_init_map.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 15:55:39 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/12 01:06:47 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/18 10:41:28 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
-#include "fdf_map.h"
-#include "fdf_map_internal.h"
+#include "load_map.h"
 
-char	**try_ft_split(char *line, t_map *map)
+t_map	*try_init_map(void)
 {
-	char	**columns;
+	t_map	*map;
 
-	columns = ft_split(line, ' ');
-	if (!columns)
+	map = (t_map *)malloc(sizeof(t_map));
+	if (!map)
 	{
-		free(line);
-		free_map_vertices(map);
-		free(map);
+		ft_putstr_fd("load_map: failed to allocate memory", 2);
 		exit(EXIT_FAILURE);
 	}
-	return (columns);
+	map->nr_rows = 0;
+	map->nr_columns = 0;
+	map->vertices = NULL;
+	return (map);
 }

@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf_map_internal.h                                 :+:      :+:    :+:   */
+/*   load_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 15:55:39 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/12 01:14:20 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/18 10:40:16 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FDF_MAP_INTERNAL_H
-# define FDF_MAP_INTERNAL_H
+#include "load_map.h"
+#include "load_map_internal.h"
 
-#include "fdf_map.h"
+t_map	*load_map(char *filepath)
+{
+	t_map	*map;
 
-t_map	*try_init_map(void);
-void	try_init_map_vertices(t_map *map);
-void	parse_map_dimensions(t_map *map, char *filepath);
-void 	parse_map(t_map *map, char *filepath);
-int		try_open(char *filepath, t_map *map);
-char	*try_get_next_line(int fd, t_map *map);
-char	**try_ft_split(char *line, t_map *map);
-
-#endif
+	map = try_init_map();
+	parse_map_dimensions(map, filepath);
+	try_init_map_vertices(map);
+	parse_map(map, filepath);
+	return (map);
+}

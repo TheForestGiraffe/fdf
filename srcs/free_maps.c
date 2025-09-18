@@ -6,13 +6,13 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 10:30:23 by plima             #+#    #+#             */
-/*   Updated: 2025/09/16 11:35:36 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/18 10:56:48 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "fdf.h"
-#include "fdf_map.h"
+#include "load_map.h"
 
 static void free_proj_map_vertices(t_proj_map *proj_map);
 

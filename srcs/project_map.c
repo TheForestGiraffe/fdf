@@ -6,14 +6,14 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 15:55:39 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/16 17:59:15 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/18 15:40:21 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <math.h>
 #include "libft.h"
-#include "fdf_map.h"
+#include "load_map.h"
 #include "fdf.h"
 
 static t_proj_map	*try_init_proj_map(t_map *map);
@@ -89,8 +89,10 @@ static void	fill_proj_map(t_map *map, t_proj_map *proj_map)
 	int		x;
 	int		y;
 	int		z;
+	float	z_scale;
 	
 	i = 0;
+	z_scale = 0.25;
 	while (i < proj_map->nr_rows)
 	{
 		j = 0;
@@ -100,7 +102,7 @@ static void	fill_proj_map(t_map *map, t_proj_map *proj_map)
 			y = map->vertices[i][j].y;
 			z = map->vertices[i][j].z;
 			proj_map->proj_vertices[i][j].x = (x - y) * cos(M_PI/6);
-			proj_map->proj_vertices[i][j].y = (x + y) * sin(M_PI/6) - z;
+			proj_map->proj_vertices[i][j].y = (x + y) * sin(M_PI/6) - (z * z_scale);
 			proj_map->proj_vertices[i][j].color = 0x00FFFFFF;
 			j++;
 		}

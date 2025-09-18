@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf_map.h                                          :+:      :+:    :+:   */
+/*   try_get_next_line.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 15:55:39 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/12 01:13:49 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/18 10:41:20 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FDF_MAP_H
-# define FDF_MAP_H
+#include <stdlib.h>
+#include "libft.h"
+#include "load_map.h"
+#include "load_map_internal.h"
 
-// t_vertex: stores the attributes of a data point.
-typedef struct s_vertex
+char	*try_get_next_line(int fd, t_map *map)
 {
-    int x;
-    int y;
-	int	z;
-}	t_vertex;
+	char	*line;
 
-// t_map: stores the attributes of a loaded map file.
-typedef struct s_map
-{
-	int			nr_rows;
-	int			nr_columns;
-	t_vertex	**vertices;
-}	t_map;
-
-t_map	*load_map(char *filepath);
-void	free_map_vertices(t_map *map);
-
-#endif
+	line = get_next_line(fd);
+	if (!line)
+	{
+		free_map_vertices(map);
+		free(map);
+		exit(EXIT_FAILURE);
+	}
+	return (line);
+}
