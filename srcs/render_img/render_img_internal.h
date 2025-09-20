@@ -1,36 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mlx_handling_internal.h                            :+:      :+:    :+:   */
+/*   render_img_internal.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/20 17:27:27 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/20 19:19:25 by pecavalc         ###   ########.fr       */
+/*   Created: 2025/09/18 10:33:55 by pecavalc          #+#    #+#             */
+/*   Updated: 2025/09/20 19:37:45 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	MLX_HANDLING_H
-# define MLX_HANDLING_H
+#ifndef RENDER_IMG_INTERNAL_H
+# define RENDER_IMG_INTERNAL_H
 
-enum {
-	ON_DESTROY = 17,
-	ON_KEYDOWN = 2,
-	ON_MOUSEDOWN = 4,
-};
+#include "fdf.h"
 
-enum {
-    KEY_PRESS_MASK = 1L << 0,
-	BUTTON_PRESS_MASK = 1L<<2
-};
-
-enum {
-	MOUSE_WHEEL_UP = 4,
-	MOUSE_WHEEL_DOWN = 5
-};
-
-int	handle_close(void *param);
-int	handle_keydown(int key, void *param);
-int handle_mousedown(int button, int x, int y, void *param);
+void	erase_img(t_app *app);
+void	draw_vertices(t_app *app);
+void	put_pixel(t_app *app, int x, int y, int color);
+void	draw_all_edges(t_app *app);
 
 #endif

@@ -1,36 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mlx_handling_internal.h                            :+:      :+:    :+:   */
+/*   erase_img.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/20 17:27:27 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/20 19:19:25 by pecavalc         ###   ########.fr       */
+/*   Created: 2025/09/16 16:49:44 by pecavalc          #+#    #+#             */
+/*   Updated: 2025/09/20 19:32:30 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	MLX_HANDLING_H
-# define MLX_HANDLING_H
+#include "fdf.h"
+#include "libft.h"
 
-enum {
-	ON_DESTROY = 17,
-	ON_KEYDOWN = 2,
-	ON_MOUSEDOWN = 4,
-};
-
-enum {
-    KEY_PRESS_MASK = 1L << 0,
-	BUTTON_PRESS_MASK = 1L<<2
-};
-
-enum {
-	MOUSE_WHEEL_UP = 4,
-	MOUSE_WHEEL_DOWN = 5
-};
-
-int	handle_close(void *param);
-int	handle_keydown(int key, void *param);
-int handle_mousedown(int button, int x, int y, void *param);
-
-#endif
+void	erase_img(t_app *app)
+{
+	ft_memset(app->img_address, 0, app->size_line * app->height);	
+}

@@ -6,14 +6,14 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/18 09:58:39 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/18 19:27:57 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/20 19:34:18 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <math.h> // round()
 #include <stdlib.h> // abs()
 #include "fdf.h"
-#include "render_fdf_internal.h"
+#include "render_img_internal.h"
 #include "libft.h"
 #include "mlx.h"
 

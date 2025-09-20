@@ -6,12 +6,12 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 16:49:44 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/18 15:28:37 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/20 19:34:23 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
-#include "render_fdf_internal.h"
+#include "render_img_internal.h"
 
 void draw_vertices(t_app *app)
 {
