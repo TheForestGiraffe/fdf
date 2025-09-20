@@ -6,34 +6,33 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 16:49:44 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/20 19:34:23 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/20 21:48:35 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 #include "render_img_internal.h"
 
-void draw_vertices(t_app *app)
+void	draw_vertices(t_app *app)
 {
 	int	i;
 	int	j;
 	int	dx;
 	int	dy;
 
-	dx = (app->width  - (app->proj_map->nr_columns * app->zoom)) / 2;
-	dy = (app->height - (app->proj_map->nr_rows * app->zoom)) / 2;
+	dx = (app->width - (app->projection->columns * app->zoom)) / 2;
+	dy = (app->height - (app->projection->rows * app->zoom)) / 2;
 	app->shift_x = dx;
 	app->shift_y = dy;
 	i = 0;
-	while (i < app->proj_map->nr_rows)
+	while (i < app->projection->rows)
 	{
 		j = 0;
-		while (j < app->proj_map->nr_columns)
+		while (j < app->projection->columns)
 		{
 			put_pixel(app,
-					  (int)(app->proj_map->proj_vertices[i][j].x * app->zoom + dx),
-					  (int)(app->proj_map->proj_vertices[i][j].y * app->zoom + dy),
-					  app->proj_map->proj_vertices[i][j].color);
+					  (int)(app->projection->vertices[i][j].x * app->zoom + dx),
+					  (int)(app->projection->vertices[i][j].y * app->zoom + dy), 0x00FFFFFF);
 			j++;
 		}
 		i++;

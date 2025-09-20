@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   try_init_map_vertices.c                            :+:      :+:    :+:   */
+/*   try_init_model_vertices.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 15:55:39 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/20 20:38:51 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/20 21:58:05 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	try_init_model_vertices(t_model *model)
 {
 	int	y;
 
-	model->vertices = (t_vertex **)malloc(model->rows * sizeof(t_vertex *));
+	model->vertices = (t_3d_vertex **)malloc(model->rows * sizeof(t_3d_vertex *));
 	if (!model->vertices)
 	{
 		free(model);
@@ -28,7 +28,7 @@ void	try_init_model_vertices(t_model *model)
 	y = 0;
 	while (y < model->rows)
 	{
-		model->vertices[y] = malloc(model->columns * sizeof(t_vertex));
+		model->vertices[y] = malloc(model->columns * sizeof(t_3d_vertex));
 		if (!model->vertices[y])
 		{
 			while (y > 0)
