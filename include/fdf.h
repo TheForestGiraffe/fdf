@@ -6,14 +6,14 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 13:07:59 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/18 13:53:33 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/20 21:21:07 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FDF_H
 # define FDF_H
 
-#include "load_map.h"
+# include "load_map.h"
 
 # ifndef M_PI
 #  define M_PI 3.14159265358979323846
@@ -24,7 +24,7 @@ typedef struct s_proj_vertex
 {
 	double				x;
 	double				y;
-	unsigned int	color;
+	unsigned int		color;
 }	t_proj_vertex;
 
 // t_proj_map: stores the attributes of a projected map file.
@@ -50,13 +50,14 @@ typedef struct s_app
 	int			zoom;
 	int			shift_x;
 	int			shift_y;
-	t_map		*map;
+	t_model		*model;
 	t_proj_map	*proj_map;
 }	t_app;
 
-t_proj_map	*project_map(t_map *map);
-void		free_maps(t_map *map, t_proj_map *proj_map);
-void 		init_mlx(t_app *app);
+void		validate_argc(int argc);
+t_proj_map	*project_map(t_model *model);
+void		free_models(t_model *model, t_proj_map *proj_map);
+void		init_mlx(t_app *app);
 void		setup_mlx_hooks(t_app *app);
 void		init_mlx_img(t_app *app);
 

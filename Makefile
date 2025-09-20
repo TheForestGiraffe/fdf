@@ -6,7 +6,7 @@
 #    By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/07 15:25:57 by pecavalc          #+#    #+#              #
-#    Updated: 2025/09/20 19:39:22 by pecavalc         ###   ########.fr        #
+#    Updated: 2025/09/20 21:22:20 by pecavalc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ SRCS_DIR = srcs
 OBJS_DIR = objs
 
 SRCS = $(addprefix $(SRCS_DIR)/, fdf.c \
-								 free_maps.c \
+								 free_models.c \
+								 validate_argc.c \
 								 project_map.c )
 OBJS = $(patsubst $(SRCS_DIR)/%.c, $(OBJS_DIR)/%.o, $(SRCS))
 
@@ -26,15 +27,15 @@ HEADER = $(HEADER_DIR)/fdf.h
 
 # load_map module
 LOAD_MAP_SRCS_DIR = srcs/load_map
-LOAD_MAP_SRCS = $(addprefix $(LOAD_MAP_SRCS_DIR)/, free_map_vertices.c \
+LOAD_MAP_SRCS = $(addprefix $(LOAD_MAP_SRCS_DIR)/, free_model_vertices.c \
 												   load_map.c \
 												   parse_map_dimensions.c \
 												   parse_map.c \
 												   try_ft_split.c \
 												   try_get_next_line.c \
 												   try_open.c \
-												   try_init_map.c \
-												   try_init_map_vertices.c)
+												   try_init_model.c \
+												   try_init_model_vertices.c)
 
 LOAD_MAP_OBJS_DIR = objs/load_map
 LOAD_MAP_OBJS = $(patsubst $(LOAD_MAP_SRCS_DIR)/%.c, \

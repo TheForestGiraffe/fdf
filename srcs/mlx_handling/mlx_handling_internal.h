@@ -6,12 +6,12 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/20 17:27:27 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/20 19:19:25 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/20 21:14:38 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	MLX_HANDLING_H
-# define MLX_HANDLING_H
+#ifndef MLX_HANDLING_INTERNAL_H
+# define MLX_HANDLING_INTERNAL_H
 
 enum {
 	ON_DESTROY = 17,
@@ -20,7 +20,7 @@ enum {
 };
 
 enum {
-    KEY_PRESS_MASK = 1L << 0,
+	KEY_PRESS_MASK = 1L << 0,
 	BUTTON_PRESS_MASK = 1L<<2
 };
 
@@ -31,6 +31,6 @@ enum {
 
 int	handle_close(void *param);
 int	handle_keydown(int key, void *param);
-int handle_mousedown(int button, int x, int y, void *param);
+int	handle_mousedown(int button, int x, int y, void *param);
 
 #endif

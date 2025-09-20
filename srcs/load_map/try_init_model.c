@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   try_init_map_vertices.c                            :+:      :+:    :+:   */
+/*   try_init_model.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 15:55:39 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/18 10:41:24 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/20 21:19:30 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,18 @@
 #include "libft.h"
 #include "load_map.h"
 
-void	try_init_map_vertices(t_map *map)
+t_model	*try_init_model(void)
 {
-	int	y;
-	
-	map->vertices = (t_vertex **)malloc(map->nr_rows * sizeof(t_vertex *));
-	if (!map->vertices)
+	t_model	*model;
+
+	model = (t_model *)malloc(sizeof(t_model));
+	if (!model)
 	{
-		free(map);
-		ft_putstr_fd("init_map_vertices: failed to initialize map->vertices", 2);
+		ft_putstr_fd("load_map: malloc failed", 2);
 		exit(EXIT_FAILURE);
 	}
-	y = 0;
-	while (y < map->nr_rows)
-	{
-		map->vertices[y] = (t_vertex *)malloc(map->nr_columns * sizeof(t_vertex));
-		if (!map->vertices[y])
-		{
-			while (y > 0)
-				free(map->vertices[--y]);
-			free(map->vertices);
-			free(map);
-			ft_putstr_fd("init_map_vertices: failed to initialize map->vertice[y]", 2);
-			exit(EXIT_FAILURE);
-		}
-		y++;
-	}
+	model->rows = 0;
+	model->columns = 0;
+	model->vertices = NULL;
+	return (model);
 }

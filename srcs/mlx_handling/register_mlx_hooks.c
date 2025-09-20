@@ -6,7 +6,7 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 10:55:28 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/20 19:20:36 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/20 21:14:53 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,6 @@ void	register_mlx_hooks(t_app *app)
 {
 	mlx_hook(app->window, ON_DESTROY, 0, &handle_close, app);
 	mlx_hook(app->window, ON_KEYDOWN, KEY_PRESS_MASK, &handle_keydown, app);
-	mlx_hook(app->window, ON_MOUSEDOWN, BUTTON_PRESS_MASK, &handle_mousedown, app);
+	mlx_hook(app->window, ON_MOUSEDOWN, BUTTON_PRESS_MASK, 
+		&handle_mousedown, app);
 }

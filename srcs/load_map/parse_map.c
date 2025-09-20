@@ -6,7 +6,7 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 15:55:39 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/18 10:41:07 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/20 20:34:39 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,37 +15,35 @@
 #include "load_map.h"
 #include "load_map_internal.h"
 
-static void	set_map_xyz(int fd, char *line, t_map *map);
+static void	set_model_xyz(int fd, char *line, t_model *model);
 
-// Convention adopted in parse_map: y = row, x = column
+// Convention adopted: y = row, x = column
 
-void	parse_map(t_map *map, char *filepath)
+void	parse_map(t_model *model, char *filepath)
 {
 	int		fd;
 	char	*line;
 
-	fd = try_open(filepath, map);
-	line = try_get_next_line(fd, map);
-	set_map_xyz(fd, line, map);
+	fd = try_open(filepath, model);
+	line = try_get_next_line(fd, model);
+	set_model_xyz(fd, line, model);
 }
 
-static void	set_map_xyz(int fd, char *line, t_map *map)
+static void	set_model_xyz(int fd, char *line, t_model *model)
 {
 	int		x;
 	int		y;
 	char	**split_line;
-	
+
 	y = 0;
 	while (line)
 	{
-		split_line = try_ft_split(line, map);
+		split_line = try_ft_split(line, model);
 		free(line);
 		x = 0;
-		while (x < map->nr_columns)
+		while (x < model->columns)
 		{
-			map->vertices[y][x].x = x;
-			map->vertices[y][x].y = y;
-			map->vertices[y][x].z = ft_atoi(split_line[x]);
+			model->vertices[y][x].z = ft_atoi(split_line[x]);
 			x++;
 		}
 		x = 0;
