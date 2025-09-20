@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_mlx_img.c                                     :+:      :+:    :+:   */
+/*   mlx_handling.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/16 16:25:42 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/16 16:46:41 by pecavalc         ###   ########.fr       */
+/*   Created: 2025/09/20 17:46:52 by pecavalc          #+#    #+#             */
+/*   Updated: 2025/09/20 17:48:39 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
-#include "mlx.h"
+#ifndef MLX_HANDLING_H
+# define MLX_HANDLING_H
 
-void	init_mlx_img(t_app *app)
-{
-	app->img = mlx_new_image(app->mlx, app->width, app->height);
-	app->img_address = mlx_get_data_addr(app->img, &app->bits_per_pixel, 
-										&app->size_line, &app->endian);
-}
+# include "fdf.h" // for t_app
+
+// mlx_handling.c
+void	init_mlx(t_app *app);
+void	setup_mlx_hooks(t_app *app);
+void	init_mlx_img(t_app *app);
+
+#endif

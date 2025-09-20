@@ -6,7 +6,7 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/07 15:24:38 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/19 14:48:12 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/20 18:10:16 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,11 @@ int main(int argc, char **argv)
 	validate_nr_args(argc); // TODO: MOVE?
 	app.map = load_map(argv[1]);
 	app.proj_map = project_map(app.map);
-
 	init_mlx(&app);
 	setup_mlx_hooks(&app);
 	init_mlx_img(&app);
 	render_fdf(&app);
-
 	mlx_loop(app.mlx);
-	
 	return 0;
 }
 
