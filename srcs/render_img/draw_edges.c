@@ -6,7 +6,7 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/18 09:58:39 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/21 03:02:13 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/21 04:11:33 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,27 +20,32 @@ int		calc_direction(int start, int end);
 
 void	draw_edges(t_app *app)
 {
-	app->edge.y0 = 0;
-	while ((app->edge.y0 < app->projection->rows))
+	int	y;
+	int	x;
+
+	y = 0;
+	while ((y < app->projection->rows))
 	{
-		app->edge.x0 = 0;
-		while ((app->edge.x0 < app->projection->columns))
+		x = 0;
+		while ((x < app->projection->columns))
 		{
-			if (app->edge.x0 < app->projection->columns - 1)
+			app->edge.x0 = (int)round(app->projection->vertices[y][x].x);
+			app->edge.y0 = (int)round(app->projection->vertices[y][x].y);
+			if (x < app->projection->columns - 1)
 			{
-				app->edge.x1 = app->edge.x0 + 1;
-				app->edge.y1 = app->edge.y0;
+				app->edge.x1 = (int)round(app->projection->vertices[y][x + 1].x);
+				app->edge.y1 = (int)round(app->projection->vertices[y][x].y);
 				draw_edge(app);
 			}
-			if (app->edge.y0 < app->projection->rows - 1)
+			if (y < app->projection->rows - 1)
 			{
-				app->edge.x1 = app->edge.x0;
-				app->edge.y1 = app->edge.y0 + 1;
+				app->edge.x1 = (int)round(app->projection->vertices[y][x].x);
+				app->edge.y1 = (int)round(app->projection->vertices[y + 1][x].y);
 				draw_edge(app);
 			}
-			app->edge.x0++;
+			x++;
 		}
-		app->edge.y0++;
+		y++;
 	}
 }
 

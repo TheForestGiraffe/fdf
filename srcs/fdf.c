@@ -6,7 +6,7 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/07 15:24:38 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/21 03:09:27 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/21 03:44:53 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int	main(int argc, char **argv)
 	init_view(app.projection, &app.view);
 	apply_isometric_projection(&app);
 	init_mlx(&app);
+	init_mlx_window(&app);
 	register_mlx_hooks(&app);
 	init_mlx_img(app.mlx, &app.view, &app.img);
 	render_img(&app);
