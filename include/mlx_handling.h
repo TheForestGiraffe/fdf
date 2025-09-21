@@ -6,7 +6,7 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/20 17:46:52 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/20 19:21:50 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/21 03:04:29 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@
 // mlx_handling.c
 void	init_mlx(t_app *app);
 void	register_mlx_hooks(t_app *app);
-void	init_mlx_img(t_app *app);
+void	init_mlx_img(void *mlx, t_view *view, t_img *img);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/07 15:25:57 by pecavalc          #+#    #+#              #
-#    Updated: 2025/09/20 21:22:20 by pecavalc         ###   ########.fr        #
+#    Updated: 2025/09/21 03:16:17 by pecavalc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,8 +17,10 @@ OBJS_DIR = objs
 
 SRCS = $(addprefix $(SRCS_DIR)/, fdf.c \
 								 free_models.c \
+								 init_projection.c \
+								 init_view.c \
 								 validate_argc.c \
-								 project_map.c )
+								 apply_isometric_projection.c )
 OBJS = $(patsubst $(SRCS_DIR)/%.c, $(OBJS_DIR)/%.o, $(SRCS))
 
 HEADER_DIR = include
@@ -54,6 +56,7 @@ MLX_HAN_SRCS = $(addprefix $(MLX_HAN_SRCS_DIR)/, handle_close.c \
 												 handle_mousedown.c \
 												 init_mlx.c \
 												 init_mlx_img.c \
+												 init_mlx_window.c \
 												 register_mlx_hooks.c)
 MLX_HAN_OBJS_DIR = objs/mlx_handling
 MLX_HAN_OBJS = $(patsubst $(MLX_HAN_SRCS_DIR)/%.c, \

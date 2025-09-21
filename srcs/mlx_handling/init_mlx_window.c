@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   draw_vertices.c                                    :+:      :+:    :+:   */
+/*   init_mlx_window.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/16 16:49:44 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/21 03:09:47 by pecavalc         ###   ########.fr       */
+/*   Created: 2025/09/16 10:55:28 by pecavalc          #+#    #+#             */
+/*   Updated: 2025/09/21 00:54:36 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <math.h>
 #include "fdf.h"
-#include "render_img_internal.h"
+#include "mlx.h"
+#include <stdlib.h>
 
-void	draw_vertices(t_projection *projection, t_view *view, t_img *img)
+void	init_mlxwindow(t_app *app)
 {
-	int	y;
-	int	x;
-
-	y = 0;
-	while (y < projection->rows)
+	app->window = mlx_new_window(app->mlx, app->view.width, 
+			app->view.height, "FDF");
+	if (!app->window)
 	{
-		x = 0;
-		while (x < projection->columns)
-		{
-			put_pixel((int)round(projection->vertices[y][x].x), 
-				(int)round(projection->vertices[y][x].y), view, img);
-			x++;
-		}
-		y++;
+		free_models(app->model, app->projection);
+		mlx_destroy_display(app->mlx);
+		free(app->mlx);
+		exit(EXIT_FAILURE);
 	}
 }

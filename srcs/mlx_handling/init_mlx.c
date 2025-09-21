@@ -6,7 +6,7 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 10:55:28 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/20 21:37:02 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/21 00:45:06 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,6 @@ void	init_mlx(t_app *app)
 	if (!app->mlx)
 	{
 		free_models(app->model, app->projection);
-		exit(EXIT_FAILURE);
-	}
-	app->width = 800;
-	app->height = 600;
-	app->window = mlx_new_window(app->mlx, app->width, app->height, "FDF");
-	if (!app->window)
-	{
-		free_models(app->model, app->projection);
-		mlx_destroy_display(app->mlx);
-		free(app->mlx);
 		exit(EXIT_FAILURE);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/18 10:33:55 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/20 21:17:16 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/21 03:03:38 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 # include "fdf.h"
 
-void	erase_img(t_app *app);
-void	draw_vertices(t_app *app);
-void	put_pixel(t_app *app, int x, int y, int color);
-void	draw_all_edges(t_app *app);
+void	erase_img(t_img *img, t_view *view);
+void	draw_vertices(t_projection *projection, t_view *view, t_img *img);
+void	draw_edges(t_app *app);
+void	put_pixel(int x, int y, t_view *view, t_img *img);
 
 #endif

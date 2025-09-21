@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   draw_vertices.c                                    :+:      :+:    :+:   */
+/*   init_view                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/16 16:49:44 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/21 03:09:47 by pecavalc         ###   ########.fr       */
+/*   Created: 2025/09/21 00:02:10 by pecavalc          #+#    #+#             */
+/*   Updated: 2025/09/21 00:56:38 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <math.h>
 #include "fdf.h"
-#include "render_img_internal.h"
 
-void	draw_vertices(t_projection *projection, t_view *view, t_img *img)
+void	init_view(t_projection *projection, t_view *view)
 {
-	int	y;
-	int	x;
-
-	y = 0;
-	while (y < projection->rows)
-	{
-		x = 0;
-		while (x < projection->columns)
-		{
-			put_pixel((int)round(projection->vertices[y][x].x), 
-				(int)round(projection->vertices[y][x].y), view, img);
-			x++;
-		}
-		y++;
-	}
+	view->width = 800;
+	view->height = 600;
+	view->zoom = 20;
+	view->shift_x = (view->width) / 2 - (projection->columns * view->zoom) / 2;
+	view->shift_y = (view->height) / 2 - (projection->rows * view->zoom) / 2;
+	view->scale_z = 0.1;
+	view->color = 0x00FFFFFF;
 }
