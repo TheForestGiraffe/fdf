@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: plima <plima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 13:07:59 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/21 03:08:29 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/21 04:55:11 by plima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,6 @@ typedef struct s_img {
 	int		endian;
 }			t_img;
 
-typedef struct s_edge {
-	int	x0;
-	int	y0;
-	int	x1;
-	int	y1;
-}	t_edge;
-
 typedef struct s_app
 {
 	void			*mlx;
@@ -63,7 +56,6 @@ typedef struct s_app
 	t_view			view;
 	t_model			*model;
 	t_projection	*projection;
-	t_edge			edge;
 }	t_app;
 
 void			validate_argc(int argc);

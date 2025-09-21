@@ -6,7 +6,7 @@
 /*   By: plima <plima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/18 10:33:55 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/21 03:35:00 by plima            ###   ########.fr       */
+/*   Updated: 2025/09/21 04:54:11 by plima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,17 @@
 
 # include "fdf.h"
 
+typedef struct s_edge {
+	int	x0;
+	int	y0;
+	int	x1;
+	int	y1;
+	int	dx;
+	int	dy;
+}		t_edge;
+
 void	erase_img(t_img *img, t_view *view);
-void	draw_edges(t_app *app);
+void	render_all_edges(t_app *app);
 void	put_pixel(int x, int y, t_view *view, t_img *img);
 
 #endif
