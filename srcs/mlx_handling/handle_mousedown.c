@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handle_mousedown.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: plima <plima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 10:55:28 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/21 00:56:17 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/21 03:31:24 by plima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	handle_mousedown(int button, int x, int y, void *param)
 		app->view.zoom -= 1;
 	if (button == MOUSE_WHEEL_UP)
 		app->view.zoom += 1;
+	apply_isometric_projection(app);
 	render_img(app);
 	return (0);
 }

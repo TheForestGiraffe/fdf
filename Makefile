@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+         #
+#    By: plima <plima@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/07 15:25:57 by pecavalc          #+#    #+#              #
-#    Updated: 2025/09/21 03:16:17 by pecavalc         ###   ########.fr        #
+#    Updated: 2025/09/21 03:34:40 by plima            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,7 +71,6 @@ MLX_HAN_HEADERS = $(PUB_MLX_HAN_HEADER_DIR)/mlx_handling.h \
 # render_img module
 RENDER_FDF_SRCS_DIR = srcs/render_img
 RENDER_FDF_SRCS = $(addprefix $(RENDER_FDF_SRCS_DIR)/, draw_edges.c \
-													   draw_vertices.c \
 													   erase_img.c \
 													   put_pixel.c \
 													   render_img.c)

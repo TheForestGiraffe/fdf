@@ -3,16 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   draw_edges.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: plima <plima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/18 09:58:39 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/21 04:11:33 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/21 03:29:07 by plima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <math.h>
 #include <stdlib.h> // abs()
 #include "fdf.h"
 #include "render_img_internal.h"
+#include "mlx.h"
 
 void	draw_edge(t_app *app);
 void	draw(t_app *app, int dx, int dy, int decision);
@@ -34,14 +36,18 @@ void	draw_edges(t_app *app)
 			if (x < app->projection->columns - 1)
 			{
 				app->edge.x1 = (int)round(app->projection->vertices[y][x + 1].x);
-				app->edge.y1 = (int)round(app->projection->vertices[y][x].y);
+				app->edge.y1 = (int)round(app->projection->vertices[y][x + 1].y);
 				draw_edge(app);
+				mlx_put_image_to_window(app->mlx, app->window, app->img.img, 0, 0);
 			}
+			app->edge.x0 = (int)round(app->projection->vertices[y][x].x);
+			app->edge.y0 = (int)round(app->projection->vertices[y][x].y);
 			if (y < app->projection->rows - 1)
 			{
-				app->edge.x1 = (int)round(app->projection->vertices[y][x].x);
+				app->edge.x1 = (int)round(app->projection->vertices[y + 1][x].x);
 				app->edge.y1 = (int)round(app->projection->vertices[y + 1][x].y);
 				draw_edge(app);
+				mlx_put_image_to_window(app->mlx, app->window, app->img.img, 0, 0);
 			}
 			x++;
 		}
