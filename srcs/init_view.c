@@ -6,7 +6,7 @@
 /*   By: plima <plima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 00:02:10 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/22 07:35:15 by plima            ###   ########.fr       */
+/*   Updated: 2025/09/22 10:29:39 by plima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,10 @@ void	init_view(t_projection *projection, t_view *view)
 	view->width = 1280;
 	view->height = 1024;
 	view->zoom = 20;
+	view->zoom_step = 2;
 	view->shift_x = (view->width) / 2 - (projection->columns * view->zoom) / 2;
 	view->shift_y = (view->height) / 2 - (projection->rows * view->zoom) / 2;
 	view->scale_z = 0.2;
-	view->translation_step = 1;
+	view->translation_step = 10;
 	view->color = 0x00FFFF00;
 }

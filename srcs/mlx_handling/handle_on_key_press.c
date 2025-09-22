@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_mousedown.c                                 :+:      :+:    :+:   */
+/*   handle_on_key_press.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: plima <plima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 10:55:28 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/21 03:31:24 by plima            ###   ########.fr       */
+/*   Updated: 2025/09/22 10:37:16 by plima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
-#include "render_img.h"
+#include "mlx.h"
 #include "mlx_handling_internal.h"
+#include <stdlib.h>
+#include <X11/keysym.h>
 
-int	handle_mousedown(int button, int x, int y, void *param)
+int	handle_on_key_press(int key, void *param)
 {
-	t_app	*app;
-
-	(void)x;
-	(void)y;
-	app = (t_app *)param;
-	if (button == MOUSE_WHEEL_DOWN)
-		app->view.zoom -= 1;
-	if (button == MOUSE_WHEEL_UP)
-		app->view.zoom += 1;
-	apply_isometric_projection(app);
-	render_img(app);
+	if (key == XK_Escape)
+		handle_close(param);
+	if (key == LEFT_ARROW_PRESS || key == RIGHT_ARROW_PRESS || 
+		key == UP_ARROW_PRESS || key == DOWN_ARROW_PRESS)
+		translate_projection(key, param);
 	return (0);
 }

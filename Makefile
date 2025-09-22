@@ -6,7 +6,7 @@
 #    By: plima <plima@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/07 15:25:57 by pecavalc          #+#    #+#              #
-#    Updated: 2025/09/22 07:57:28 by plima            ###   ########.fr        #
+#    Updated: 2025/09/22 09:23:32 by plima            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,7 +55,7 @@ LOAD_MAP_HEADERS = $(PUB_LOAD_MAP_HEADER_DIR)/fdf_map.h \
 MLX_HAN_SRCS_DIR = srcs/mlx_handling
 MLX_HAN_SRCS = $(addprefix $(MLX_HAN_SRCS_DIR)/, handle_close.c \
 												 handle_keydown.c \
-												 handle_mousedown.c \
+												 handle_mouse_wheel_down.c \
 												 init_mlx.c \
 												 init_mlx_img.c \
 												 init_mlx_window.c \

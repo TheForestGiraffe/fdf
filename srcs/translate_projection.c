@@ -6,7 +6,7 @@
 /*   By: plima <plima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 07:29:45 by plima             #+#    #+#             */
-/*   Updated: 2025/09/22 08:10:37 by plima            ###   ########.fr       */
+/*   Updated: 2025/09/22 10:39:21 by plima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ void    translate_projection(int key, void *param)
     t_app   *app;
 
     app = (t_app *)param;
-    if (key == LEFT_ARROW_DOWN)
+    if (key == LEFT_ARROW_PRESS)
         app->view.shift_x -= app->view.translation_step;
-    if (key == RIGHT_ARROW_DOWN)
+    if (key == RIGHT_ARROW_PRESS)
         app->view.shift_x += app->view.translation_step;
-    if (key == UP_ARROW_DOWN)
-        app->view.shift_y += app->view.translation_step;
-    if (key == DOWN_ARROW_DOWN)
+    if (key == UP_ARROW_PRESS)
         app->view.shift_y -= app->view.translation_step;
+    if (key == DOWN_ARROW_PRESS)
+        app->view.shift_y += app->view.translation_step;
     update_view(app);
 }
