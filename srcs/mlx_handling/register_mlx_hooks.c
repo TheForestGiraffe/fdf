@@ -6,7 +6,7 @@
 /*   By: plima <plima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 10:55:28 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/22 10:38:53 by plima            ###   ########.fr       */
+/*   Updated: 2025/09/22 12:26:04 by plima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void	register_mlx_hooks(t_app *app)
 		&handle_on_button_press, app);	
 	mlx_hook(app->window, ON_BUTTON_RELEASE, BUTTON_RELEASE_MASK, 
 		&handle_on_button_release, app);
+	mlx_hook(app->window, ON_MOUSE_MOVE, MOUSE_MOVE_MASK, 
+		&handle_on_mouse_move, app);
 }
-
-
-//TODO mlx_hook(app->win, 6, 1L<<6, mouse_move, app);   // motion

@@ -6,7 +6,7 @@
 #    By: plima <plima@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/07 15:25:57 by pecavalc          #+#    #+#              #
-#    Updated: 2025/09/22 09:23:32 by plima            ###   ########.fr        #
+#    Updated: 2025/09/22 13:37:14 by plima            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,10 +19,7 @@ SRCS = $(addprefix $(SRCS_DIR)/, fdf.c \
 								 free_models.c \
 								 init_projection.c \
 								 init_view.c \
-								 validate_argc.c \
-								 translate_projection.c \
-								 update_view.c \
-								 apply_isometric_projection.c )
+								 validate_argc.c)
 OBJS = $(patsubst $(SRCS_DIR)/%.c, $(OBJS_DIR)/%.o, $(SRCS))
 
 HEADER_DIR = include
@@ -54,8 +51,10 @@ LOAD_MAP_HEADERS = $(PUB_LOAD_MAP_HEADER_DIR)/fdf_map.h \
 # mlx_handling module
 MLX_HAN_SRCS_DIR = srcs/mlx_handling
 MLX_HAN_SRCS = $(addprefix $(MLX_HAN_SRCS_DIR)/, handle_close.c \
-												 handle_keydown.c \
-												 handle_mouse_wheel_down.c \
+												 handle_on_button_press.c \
+												 handle_on_button_release.c \
+												 handle_on_key_press.c \
+												 handle_on_mouse_move.c \
 												 init_mlx.c \
 												 init_mlx_img.c \
 												 init_mlx_window.c \
@@ -72,10 +71,15 @@ MLX_HAN_HEADERS = $(PUB_MLX_HAN_HEADER_DIR)/mlx_handling.h \
 
 # render_img module
 RENDER_FDF_SRCS_DIR = srcs/render_img
-RENDER_FDF_SRCS = $(addprefix $(RENDER_FDF_SRCS_DIR)/, render_all_edges.c \
-													   erase_img.c \
-													   put_pixel.c \
-													   render_img.c)
+RENDER_FDF_SRCS = $(addprefix $(RENDER_FDF_SRCS_DIR)/, \
+				   apply_isometric_projection_to_model.c \
+				   apply_rotation_to_model.c \
+				   apply_translation_to_projection.c \
+				   apply_zoom_to_projection.c \
+				   erase_img.c \
+				   put_pixel.c \
+				   render_all_edges.c \
+				   render_img.c)
 
 RENDER_FDF_OBJS_DIR = objs/render_img
 RENDER_FDF_OBJS = $(patsubst $(RENDER_FDF_SRCS_DIR)/%.c, \

@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   render_img.c                                       :+:      :+:    :+:   */
+/*   apply_translatation_to_projection.c                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: plima <plima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/16 16:49:44 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/22 13:55:11 by plima            ###   ########.fr       */
+/*   Created: 2025/09/22 07:29:45 by plima             #+#    #+#             */
+/*   Updated: 2025/09/22 13:17:34 by plima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
-#include "render_img_internal.h"
-#include "mlx.h"
+#include "mlx_handling_internal.h"
+#include "render_img.h"
 
-void	render_img(t_app *app)
+void    apply_translation_to_projection(t_app *app)
 {
-	erase_img(&app->img, &app->view);
-	apply_rotation_to_model(app);m
-	apply_isometric_projection_to_model(app);
-	apply_zoom_to_projection(app);
-	apply_translation_to_projection(app);
-	render_all_edges(app);
-	mlx_put_image_to_window(app->mlx, app->window, app->img.img, 0, 0);
+    int		x;
+	int		y;
+
+	y = 0;
+	while (y < app->projection->rows)
+	{
+		x = 0;
+		while (x < app->projection->columns)
+		{
+			app->projection->vertices[y][x].x += app->view.shift_x;
+			app->projection->vertices[y][x].y += app->view.shift_y;
+			x++;
+		}
+		y++;
+	}
 }

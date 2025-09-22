@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.c                                              :+:      :+:    :+:   */
+/*   handle_on_mouse_move.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: plima <plima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/07 15:24:38 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/22 13:20:14 by plima            ###   ########.fr       */
+/*   Created: 2025/09/22 12:27:19 by plima             #+#    #+#             */
+/*   Updated: 2025/09/22 13:34:17 by plima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "mlx.h"
-#include "libft.h"
-#include "load_map.h"
 #include "fdf.h"
 #include "render_img.h"
-#include "mlx_handling.h"
 
-int	main(int argc, char **argv)
+int handle_on_mouse_move(int x, int y, void *param)
 {
-	t_app		app;
+    t_app   *app;
 
-	validate_argc(argc);
-	app.model = load_map(argv[1]);
-	app.projection = init_projection(app.model);
-	init_view(app.projection, &app.view);
-	init_mlx(&app);
-	init_mlx_window(&app);
-	register_mlx_hooks(&app);
-	init_mlx_img(app.mlx, &app.view, &app.img);
-	render_img(&app);
-	mlx_loop(app.mlx);
-	return (0);
+    app = (t_app *)param;
+    if (app->view.currently_dragging_with_left_mouse_button)
+    {
+        app->view.rot_angle_x = (x - app->view.last_mouse_x) * 
+            app->view.rot_sensitivity;
+        app->view.rot_angle_y = (y - app->view.last_mouse_y) *
+            app->view.rot_sensitivity;
+        render_img(app);
+    }
+    return (0);
 }

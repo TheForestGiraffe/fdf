@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   translate_projection.c                             :+:      :+:    :+:   */
+/*   apply_zoom_to_projection.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: plima <plima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 07:29:45 by plima             #+#    #+#             */
-/*   Updated: 2025/09/22 10:39:21 by plima            ###   ########.fr       */
+/*   Updated: 2025/09/22 13:22:39 by plima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,21 @@
 #include "mlx_handling_internal.h"
 #include "render_img.h"
 
-void    translate_projection(int key, void *param)
+void    apply_zoom_to_projection(t_app *app)
 {
-    t_app   *app;
+    int		x;
+	int		y;
 
-    app = (t_app *)param;
-    if (key == LEFT_ARROW_PRESS)
-        app->view.shift_x -= app->view.translation_step;
-    if (key == RIGHT_ARROW_PRESS)
-        app->view.shift_x += app->view.translation_step;
-    if (key == UP_ARROW_PRESS)
-        app->view.shift_y -= app->view.translation_step;
-    if (key == DOWN_ARROW_PRESS)
-        app->view.shift_y += app->view.translation_step;
-    update_view(app);
+	y = 0;
+	while (y < app->projection->rows)
+	{
+		x = 0;
+		while (x < app->projection->columns)
+		{
+			app->projection->vertices[y][x].x *= app->view.zoom;
+			app->projection->vertices[y][x].y *= app->view.zoom;
+			x++;
+		}
+		y++;
+	}
 }

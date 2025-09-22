@@ -6,7 +6,7 @@
 /*   By: plima <plima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 10:55:28 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/22 07:03:26 by plima            ###   ########.fr       */
+/*   Updated: 2025/09/22 12:58:14 by plima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,8 @@
 #include "mlx.h"
 #include <stdlib.h>
 
-int	handle_close(void *param)
+int	handle_close(t_app *app)
 {
-	t_app	*app;
-
-	app = (t_app *)param;
 	free_models(app->model, app->projection);
 	if (app->img.img)
 		mlx_destroy_image(app->mlx, app->img.img);
