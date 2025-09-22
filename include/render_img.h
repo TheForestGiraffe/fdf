@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   load_map.c                                         :+:      :+:    :+:   */
+/*   render_img.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/09 15:55:39 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/20 20:28:44 by pecavalc         ###   ########.fr       */
+/*   Created: 2025/09/18 10:41:56 by pecavalc          #+#    #+#             */
+/*   Updated: 2025/09/20 19:36:45 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "load_map.h"
-#include "load_map_internal.h"
+#ifndef RENDER_IMG_H
+# define RENDER_IMG_H
 
-t_model	*load_map(char *filepath)
-{
-	t_model	*model;
+void	render_img(t_app *app);
 
-	model = try_init_model();
-	parse_map_dimensions(model, filepath);
-	try_init_model_vertices(model);
-	parse_map(model, filepath);
-	return (model);
-}
+#endif

@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_map_vertices.c                                :+:      :+:    :+:   */
+/*   mlx_handling_internal.h                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/09 15:55:39 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/18 10:40:44 by pecavalc         ###   ########.fr       */
+/*   Created: 2025/09/20 17:27:27 by pecavalc          #+#    #+#             */
+/*   Updated: 2025/09/20 21:14:38 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "load_map.h"
+#ifndef MLX_HANDLING_INTERNAL_H
+# define MLX_HANDLING_INTERNAL_H
 
-void	free_map_vertices(t_map *map)
-{
-	int	y;
+enum {
+	ON_DESTROY = 17,
+	ON_KEYDOWN = 2,
+	ON_MOUSEDOWN = 4,
+};
 
-	y = map->nr_rows;
-	if (map->vertices)
-	{
-		while (y > 0)
-		{
-			free(map->vertices[--y]);
-			map->vertices[y] = NULL;
-		}
-		free(map->vertices);
-		map->vertices = NULL;
-	}
-}
+enum {
+	KEY_PRESS_MASK = 1L << 0,
+	BUTTON_PRESS_MASK = 1L<<2
+};
+
+enum {
+	MOUSE_WHEEL_UP = 4,
+	MOUSE_WHEEL_DOWN = 5
+};
+
+int	handle_close(void *param);
+int	handle_keydown(int key, void *param);
+int	handle_mousedown(int button, int x, int y, void *param);
+
+#endif

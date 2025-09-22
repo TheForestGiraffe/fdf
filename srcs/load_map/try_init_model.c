@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   put_pixel.c                                        :+:      :+:    :+:   */
+/*   try_init_model.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/16 16:49:44 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/18 13:45:05 by pecavalc         ###   ########.fr       */
+/*   Created: 2025/09/09 15:55:39 by pecavalc          #+#    #+#             */
+/*   Updated: 2025/09/20 21:19:30 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include <stdlib.h>
+#include "libft.h"
+#include "load_map.h"
 
-void	put_pixel(t_app *app, int x, int y, int color)
+t_model	*try_init_model(void)
 {
-	char	*pixel_address;
+	t_model	*model;
 
-	if (x < 0 || x >= app->width || y < 0 || y >= app->height)
-		return ;
-	pixel_address = app->img_address + (y * app->size_line)
-									 + (x * app->bits_per_pixel/8);
-	*(unsigned int *)pixel_address = color;
+	model = (t_model *)malloc(sizeof(t_model));
+	if (!model)
+	{
+		ft_putstr_fd("load_map: malloc failed", 2);
+		exit(EXIT_FAILURE);
+	}
+	model->rows = 0;
+	model->columns = 0;
+	model->vertices = NULL;
+	return (model);
 }

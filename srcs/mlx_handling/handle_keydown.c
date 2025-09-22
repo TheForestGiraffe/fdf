@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   load_map.c                                         :+:      :+:    :+:   */
+/*   handle_keydown.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/09 15:55:39 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/20 20:28:44 by pecavalc         ###   ########.fr       */
+/*   Created: 2025/09/16 10:55:28 by pecavalc          #+#    #+#             */
+/*   Updated: 2025/09/20 21:08:22 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "load_map.h"
-#include "load_map_internal.h"
+#include "fdf.h"
+#include "mlx.h"
+#include "mlx_handling_internal.h"
+#include <stdlib.h>
+#include <X11/keysym.h>
 
-t_model	*load_map(char *filepath)
+int	handle_keydown(int key, void *param)
 {
-	t_model	*model;
-
-	model = try_init_model();
-	parse_map_dimensions(model, filepath);
-	try_init_model_vertices(model);
-	parse_map(model, filepath);
-	return (model);
+	if (key == XK_Escape)
+		handle_close(param);
+	return (0);
 }

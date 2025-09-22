@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   render_fdf_internal.h                              :+:      :+:    :+:   */
+/*   mlx_handling.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/18 10:33:55 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/18 19:21:32 by pecavalc         ###   ########.fr       */
+/*   Created: 2025/09/20 17:46:52 by pecavalc          #+#    #+#             */
+/*   Updated: 2025/09/21 03:45:27 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#ifndef MLX_HANDLING_H
+# define MLX_HANDLING_H
 
-#ifndef RENDER_FDF_INTERNAL_H
-# define RENDER_FDF_INTERNAL_H
+# include "fdf.h" // for t_app
 
-void	draw_vertices(t_app *app);
-void	put_pixel(t_app *app, int x, int y, int color);
-void	draw_all_edges(t_app *app);
+// mlx_handling.c
+void	init_mlx(t_app *app);
+void	init_mlx_window(t_app *app);
+void	register_mlx_hooks(t_app *app);
+void	init_mlx_img(void *mlx, t_view *view, t_img *img);
 
 #endif

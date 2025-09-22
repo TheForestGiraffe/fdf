@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   render_fdf.c                                       :+:      :+:    :+:   */
+/*   init_mlx_img.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/16 16:49:44 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/18 19:30:48 by pecavalc         ###   ########.fr       */
+/*   Created: 2025/09/16 10:55:28 by pecavalc          #+#    #+#             */
+/*   Updated: 2025/09/21 00:55:10 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
-#include "render_fdf_internal.h"
 #include "mlx.h"
+#include "mlx_handling_internal.h"
+#include <stdlib.h>
+#include <X11/keysym.h>
 
-void	render_fdf(t_app *app)
+void	init_mlx_img(void *mlx, t_view *view, t_img *img)
 {
-	app->zoom = 20;
-	draw_vertices(app);
-	draw_all_edges(app);
-	mlx_put_image_to_window(app->mlx, app->window, app->img, 0, 0);
+	img->img = mlx_new_image(mlx, view->width, view->height);
+	img->address = mlx_get_data_addr(img->img, &img->bits_per_pixel, 
+			&img->line_size, &img->endian);
 }
