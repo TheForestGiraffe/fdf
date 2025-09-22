@@ -6,7 +6,7 @@
 #    By: plima <plima@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/07 15:25:57 by pecavalc          #+#    #+#              #
-#    Updated: 2025/09/21 04:42:52 by plima            ###   ########.fr        #
+#    Updated: 2025/09/22 07:57:28 by plima            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,8 @@ SRCS = $(addprefix $(SRCS_DIR)/, fdf.c \
 								 init_projection.c \
 								 init_view.c \
 								 validate_argc.c \
+								 translate_projection.c \
+								 update_view.c \
 								 apply_isometric_projection.c )
 OBJS = $(patsubst $(SRCS_DIR)/%.c, $(OBJS_DIR)/%.o, $(SRCS))
 

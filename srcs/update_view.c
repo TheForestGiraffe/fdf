@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_view.c                                        :+:      :+:    :+:   */
+/*   update_view.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: plima <plima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/21 00:02:10 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/22 07:35:15 by plima            ###   ########.fr       */
+/*   Created: 2025/09/22 07:55:59 by plima             #+#    #+#             */
+/*   Updated: 2025/09/22 07:58:01 by plima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
+#include "render_img.h"
 
-void	init_view(t_projection *projection, t_view *view)
+void    update_view(t_app *app)
 {
-	view->width = 1280;
-	view->height = 1024;
-	view->zoom = 20;
-	view->shift_x = (view->width) / 2 - (projection->columns * view->zoom) / 2;
-	view->shift_y = (view->height) / 2 - (projection->rows * view->zoom) / 2;
-	view->scale_z = 0.2;
-	view->translation_step = 1;
-	view->color = 0x00FFFF00;
+    apply_isometric_projection(app);
+    render_img(app);
 }

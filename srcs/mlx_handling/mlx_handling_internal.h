@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mlx_handling_internal.h                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: plima <plima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/20 17:27:27 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/20 21:14:38 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/22 07:23:19 by plima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,11 @@ enum {
 
 enum {
 	MOUSE_WHEEL_UP = 4,
-	MOUSE_WHEEL_DOWN = 5
+	MOUSE_WHEEL_DOWN = 5,
+	LEFT_ARROW_DOWN = 65361,
+	RIGHT_ARROW_DOWN = 65363,
+	UP_ARROW_DOWN = 65362,
+	DOWN_ARROW_DOWN = 65364
 };
 
 int	handle_close(void *param);
