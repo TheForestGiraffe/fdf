@@ -6,7 +6,7 @@
 /*   By: plima <plima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 16:49:44 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/22 13:55:11 by plima            ###   ########.fr       */
+/*   Updated: 2025/09/22 14:01:30 by plima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 void	render_img(t_app *app)
 {
 	erase_img(&app->img, &app->view);
-	apply_rotation_to_model(app);m
+	apply_rotation_to_model(app);
 	apply_isometric_projection_to_model(app);
 	apply_zoom_to_projection(app);
 	apply_translation_to_projection(app);
