@@ -6,7 +6,7 @@
 /*   By: plima <plima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 13:07:59 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/22 12:53:48 by plima            ###   ########.fr       */
+/*   Updated: 2025/09/23 19:44:07 by plima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,18 @@
 # ifndef M_PI
 #  define M_PI 3.14159265358979323846
 # endif
+
+typedef struct s_3d_vertex {
+	double				x;
+	double				y;
+	double				z;
+}	t_2d_vertex;
+
+typedef struct s_projection {
+	int				rows;
+	int				columns;
+	t_2d_vertex		**vertices;
+}	t_projection;
 
 typedef struct s_2d_vertex {
 	double				x;
@@ -44,8 +56,9 @@ typedef struct s_view {
 	bool	currently_dragging_with_left_mouse_button;
 	int		last_mouse_x;
 	int		last_mouse_y;
-	float	rot_angle_x;
-	float	rot_angle_y;
+	double	rot_angle_x;
+	double	rot_angle_y;
+	double	rot_angle_z;
 	float	rot_sensitivity;
 }			t_view;
 
@@ -64,6 +77,7 @@ typedef struct s_app
 	t_img			img;
 	t_view			view;
 	t_model			*model;
+	t_model			*transformed_model;
 	t_projection	*projection;
 }	t_app;
 

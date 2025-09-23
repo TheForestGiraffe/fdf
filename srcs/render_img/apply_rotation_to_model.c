@@ -6,46 +6,72 @@
 /*   By: plima <plima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 12:47:58 by plima             #+#    #+#             */
-/*   Updated: 2025/09/23 16:55:18 by plima            ###   ########.fr       */
+/*   Updated: 2025/09/23 19:45:11 by plima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <math.h>
 #include "fdf.h"
 
-void    apply_rotation_to_model(t_app *app)
-{
-    (void)app;
-/*
-    int		x;
-	int		y;
+static void    rotate_vertex_around_x(int i, int j, t_app *app);
+static void    rotate_vertex_around_y(int i, int j, t_app *app);
+static void    rotate_vertex_around_z(int i, int j, t_app *app);
 
-	y = 0;
-	while (y < app->model->rows)
+t_model	*apply_rotation_to_model(t_app *app)
+{
+    int		i;
+	int		j;
+
+	j = 0;
+	while (j < app->model->rows)
 	{
-		x = 0;
-		while (x < app->model->columns)
+		i = 0;
+		while (i < app->model->columns)
 		{
-			app->projection->vertices[y][x].x = app->view.shift_x;
-			app->projection->vertices[y][x].y += app->view.shift_y;
-			x++;
+			rotate_vertex_around_x(i, j, app);
+			rotate_vertex_around_y(i, j, app);
+			rotate_vertex_around_z(i, j, app);
+			i++;
 		}
-		y++;
+		j++;
 	}
-    //TODO:
-    // rotate_around_x_axis(...);
-    // rotate_around_y_axis(...);
-    */
 }
 
-/*
-void    rotate_around_x(int x, int y, t_app *app)
+static void    rotate_vertex_around_x(int i, int j, t_app *app)
 {
-    int z;
-    int theta;
+    double y;
+    double z;
+    double theta;
 
-    z = app->model->vertices[y][x].z;
+    y = app->model->vertices[j][i].y;
+	z = app->model->vertices[j][i].z;
     theta = app->view.rot_angle_x;
-    app->model->vertices[y][x].y = y * cos(theta) - z * sin(theta);
-    app->model ->vertices[y][x].z = y * sin(theta) + z * cos(theta);
+    app->transformed_model->vertices[j][i].y = y * cos(theta) - z * sin(theta);
+    app->transformed_model->vertices[j][i].z = y * sin(theta) + z * cos(theta);
 }
-*/
+
+static void    rotate_vertex_around_y(int i, int j, t_app *app)
+{
+    double x;
+    double z;
+    double theta;
+
+    x = app->model->vertices[j][i].x;
+	z = app->model->vertices[j][i].z;
+    theta = app->view.rot_angle_y;
+    app->transformed_model->vertices[j][i].x = x * cos(theta) + z * sin(theta);
+    app->transformed_model->vertices[j][i].z = -x * sin(theta) + z * cos(theta);
+}
+
+static void    rotate_vertex_around_z(int i, int j, t_app *app)
+{
+    double x;
+    double y;
+    double theta;
+
+    x = app->model->vertices[j][i].x;
+	y = app->model->vertices[j][i].y;
+    theta = app->view.rot_angle_z;
+    app->transformed_model->vertices[j][i].x = x * cos(theta) - y * sin(theta);
+	app->transformed_model->vertices[j][i].y = x * sin(theta) + y * cos(theta);
+}
