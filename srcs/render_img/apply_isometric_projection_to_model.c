@@ -6,7 +6,7 @@
 /*   By: plima <plima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 15:55:39 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/22 13:19:22 by plima            ###   ########.fr       */
+/*   Updated: 2025/09/23 17:09:23 by plima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,26 @@
 
 void	apply_isometric_projection_to_model(t_app *app)
 {
-	int		x;
-	int		y;
+	int		i;
+	int		j;
+	double	x;
+	double	y;
+	double	z;
 
-	y = 0;
-	while (y < app->projection->rows)
+	j = 0;
+	while (j < app->projection->rows)
 	{
-		x = 0;
-		while (x < app->projection->columns)
+		i = 0;
+		while (i < app->projection->columns)
 		{
-			app->projection->vertices[y][x].x = (x - y) * cos(M_PI / 6);
-			app->projection->vertices[y][x].y = (x + y) * sin(M_PI / 6) - 
-				(app->model->vertices[y][x].z * app->view.scale_z);
-			x++;
+			x = app->model->vertices[j][i].x;
+			y = app->model->vertices[j][i].y;
+			z = app->model->vertices[j][i].z;
+			app->projection->vertices[j][i].x = (x - y) * cos(M_PI / 6);
+			app->projection->vertices[j][i].y = (x + y) * sin(M_PI / 6) - 
+				(z * app->view.scale_z);
+			i++;
 		}
-		y++;
+		j++;
 	}
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   load_map.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: plima <plima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 15:55:39 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/20 21:57:47 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/23 16:58:45 by plima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 typedef struct s_3d_vertex
 {
+	int	x;
+	int	y;
 	int	z;
 }	t_3d_vertex;
 
