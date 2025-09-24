@@ -6,7 +6,7 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 15:55:39 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/24 12:30:24 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/24 15:02:07 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ typedef struct s_model
 }	t_model;
 
 t_model	*load_map(char *filepath, t_app *app);
-void	free_model_vertices(t_model *model);
+t_model *create_model(t_app *app);
 
 #endif

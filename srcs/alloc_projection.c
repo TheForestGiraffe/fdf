@@ -1,22 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_projection.c                                  :+:      :+:    :+:   */
+/*   alloc_projection.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 14:44:52 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/24 14:57:38 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/24 14:50:27 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "fdf.h"
 
-void	init_projection(t_projection *projection, t_model *model)
+t_projection *alloc_projection(t_app *app)
 {
+	t_projection	*projection;
+
+	projection = (t_projection *)malloc(sizeof(t_projection));
+	if (!projection)
+	{
+		perror("alloc_projection: malloc failed");
+		destroy_app(app, EXIT_FAILURE);
+	}
 	projection->rows = model->rows;
 	projection->columns = model->columns;
+	if (init_projection_vertices(model, projection))
+	{
+		perror("init_projection_vertices: malloc failed");
+		exit(EXIT_FAILURE);
+	}
 }
 
 static int	init_projection_vertices(t_model *model, t_projection *projection)

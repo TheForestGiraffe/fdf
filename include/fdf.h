@@ -6,7 +6,7 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 13:07:59 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/24 12:35:15 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/24 14:52:51 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,9 @@ void			validate_argc(int argc);
 void			init_app(t_app *app);
 void			init_img(t_img *img);
 t_model			*init_transformed_model(t_model *model);
-t_projection	*init_projection(t_model *model);
+t_projection	*create_projection(t_model *model);
+t_projection	*alloc_projection(t_app *app);
+void			init_projection(t_projection *projection, t_model *model);
 void			init_view(t_view *view);
 void			destroy_app(t_app *app, int exit_code);
 

@@ -6,7 +6,7 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 15:55:39 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/20 20:35:14 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/24 14:13:19 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "load_map.h"
 #include "load_map_internal.h"
 
-char	**try_ft_split(char *line, t_model *model)
+char	**try_ft_split(char *line, t_app *app)
 {
 	char	**columns;
 
@@ -23,9 +23,7 @@ char	**try_ft_split(char *line, t_model *model)
 	if (!columns)
 	{
 		free(line);
-		free_model_vertices(model);
-		free(model);
-		exit(EXIT_FAILURE);
+		destroy_app(app, EXIT_FAILURE);
 	}
 	return (columns);
 }
