@@ -6,7 +6,7 @@
 /*   By: plima <plima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 13:07:59 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/23 19:44:07 by plima            ###   ########.fr       */
+/*   Updated: 2025/09/23 23:34:53 by plima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ typedef struct s_app
 }	t_app;
 
 void			validate_argc(int argc);
+t_model 		*init_transformed_model(t_model *model);
 t_projection	*init_projection(t_model *model);
 void			init_view(t_projection *projection, t_view *view);
 void			free_models(t_model *model, t_projection *projection);

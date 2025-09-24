@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   apply_rotation_to_model.c                          :+:      :+:    :+:   */
+/*   apply_rotation_from_model.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: plima <plima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 12:47:58 by plima             #+#    #+#             */
-/*   Updated: 2025/09/23 19:45:11 by plima            ###   ########.fr       */
+/*   Updated: 2025/09/23 23:24:39 by plima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void    rotate_vertex_around_x(int i, int j, t_app *app);
 static void    rotate_vertex_around_y(int i, int j, t_app *app);
 static void    rotate_vertex_around_z(int i, int j, t_app *app);
 
-t_model	*apply_rotation_to_model(t_app *app)
+t_model	*apply_rotation_from_model(t_app *app)
 {
     int		i;
 	int		j;

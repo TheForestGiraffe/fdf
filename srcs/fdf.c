@@ -6,7 +6,7 @@
 /*   By: plima <plima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/07 15:24:38 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/23 19:48:50 by plima            ###   ########.fr       */
+/*   Updated: 2025/09/23 23:56:25 by plima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,9 @@ int	main(int argc, char **argv)
 
 	validate_argc(argc);
 	app.model = load_map(argv[1]);
+	app.transformed_model = init_transformed_model(&app);
+
 	//TODO: 
-	// - Initialize transformed model
 	// - Ensure transformed model is freed properly
 	// - Update applyu_projection function, zoom, shift, etc. to be applied over transformed model.
 	// - Implement rotation z with keyboard?
