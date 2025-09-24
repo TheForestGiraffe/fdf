@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   load_map.h                                         :+:      :+:    :+:   */
+/*   init_img.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/09 15:55:39 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/24 12:30:24 by pecavalc         ###   ########.fr       */
+/*   Created: 2025/09/24 10:35:03 by pecavalc          #+#    #+#             */
+/*   Updated: 2025/09/24 11:06:25 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LOAD_MAP_H
-# define LOAD_MAP_H
+#include "fdf.h"
+#include <stddef.h>
 
-typedef struct s_3d_vertex
+void	init_img(t_img *img)
 {
-	int	x;
-	int	y;
-	int	z;
-}	t_3d_vertex;
-
-typedef struct s_model
-{
-	int			rows;
-	int			columns;
-	t_3d_vertex	**vertices;
-}	t_model;
-
-t_model	*load_map(char *filepath, t_app *app);
-void	free_model_vertices(t_model *model);
-
-#endif
+	img->img = NULL;
+	img->address = NULL;
+	img->bits_per_pixel = 0;
+	img->line_size = 0;
+	img->endian = 0;
+}

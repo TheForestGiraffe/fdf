@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: plima <plima@student.42.fr>                +#+  +:+       +#+        */
+/*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 13:07:59 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/23 23:34:53 by plima            ###   ########.fr       */
+/*   Updated: 2025/09/24 12:35:15 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,6 @@
 # ifndef M_PI
 #  define M_PI 3.14159265358979323846
 # endif
-
-typedef struct s_3d_vertex {
-	double				x;
-	double				y;
-	double				z;
-}	t_2d_vertex;
-
-typedef struct s_projection {
-	int				rows;
-	int				columns;
-	t_2d_vertex		**vertices;
-}	t_projection;
 
 typedef struct s_2d_vertex {
 	double				x;
@@ -72,19 +60,21 @@ typedef struct s_img {
 
 typedef struct s_app
 {
-	void			*mlx;
-	void			*window;
-	t_img			img;
-	t_view			view;
-	t_model			*model;
-	t_model			*transformed_model;
-	t_projection	*projection;
+	void				*mlx;
+	void				*window;
+	t_img				img;
+	t_view				view;
+	t_model				*model;
+	t_model				*model_transformed;
+	t_projection		*projection;
 }	t_app;
 
 void			validate_argc(int argc);
-t_model 		*init_transformed_model(t_model *model);
+void			init_app(t_app *app);
+void			init_img(t_img *img);
+t_model			*init_transformed_model(t_model *model);
 t_projection	*init_projection(t_model *model);
-void			init_view(t_projection *projection, t_view *view);
-void			free_models(t_model *model, t_projection *projection);
+void			init_view(t_view *view);
+void			destroy_app(t_app *app, int exit_code);
 
 #endif

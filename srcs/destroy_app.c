@@ -1,33 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   load_map.h                                         :+:      :+:    :+:   */
+/*   destroy_app.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 15:55:39 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/24 12:30:24 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/24 12:36:56 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LOAD_MAP_H
-# define LOAD_MAP_H
+#include <stdlib.h>
+#include "fdf.h"
+#include "load_map.h"
 
-typedef struct s_3d_vertex
+void	destroy_app(t_app *app, int exit_code)
 {
-	int	x;
+	if (!app->model)
+		free_model(app); // TOOD: implementar free_model incl. vertices
+
+
+
+
+
+
+	free_model_vertices(model);
+	free(model);
+	model = NULL;
+	free_projection_vertices(projection);
+	free(projection);
+	projection = NULL;
+}
+
+
+
+void	free_model_vertices(t_model *model)
+{
 	int	y;
-	int	z;
-}	t_3d_vertex;
 
-typedef struct s_model
-{
-	int			rows;
-	int			columns;
-	t_3d_vertex	**vertices;
-}	t_model;
-
-t_model	*load_map(char *filepath, t_app *app);
-void	free_model_vertices(t_model *model);
-
-#endif
+	y = model->rows;
+	if (model->vertices)
+	{
+		while (y > 0)
+		{
+			free(model->vertices[--y]);
+			model->vertices[y] = NULL;
+		}
+		free(model->vertices);
+		model->vertices = NULL;
+	}
+}

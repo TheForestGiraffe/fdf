@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   load_map_internal.h                                :+:      :+:    :+:   */
+/*   init_model.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 15:55:39 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/24 12:30:02 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/24 12:28:46 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LOAD_MAP_INTERNAL_H
-# define LOAD_MAP_INTERNAL_H
+#include <stdlib.h>
+#include "load_map.h"
 
-# include "load_map.h"
-# include "fdf.h"
-
-t_model	*create_model(t_app *app);
-t_model	*alloc_model(t_app *app);
-void	try_init_model_vertices(t_model *model);
-void	parse_map_dimensions(t_model *model, char *filepath);
-void	parse_map(t_model *model, char *filepath);
-int		try_open(char *filepath, t_model *model);
-char	*try_get_next_line(int fd, t_model *map);
-char	**try_ft_split(char *line, t_model *map);
-
-#endif
+void	init_model(t_model *model)
+{
+	model->rows = 0;
+	model->columns = 0;
+	model->vertices = NULL;
+	return (model);
+}
