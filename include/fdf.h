@@ -6,7 +6,7 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 13:07:59 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/25 20:56:05 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/25 21:25:47 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,6 @@ t_projection	*alloc_projection(t_app *app);
 void			init_projection(t_projection *projection, t_model *model);
 void			alloc_projection_vertices(t_projection *projeciton, t_app *app);
 void			init_view(t_view *view);
-void			move_origin_to_geometric_center(t_model *model_transformed);
 void			destroy_app(t_app *app, int exit_code);
 
 #endif
