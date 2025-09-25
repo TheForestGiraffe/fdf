@@ -6,7 +6,7 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 15:21:56 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/25 16:00:10 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/25 21:20:23 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static double	calc_center_z(t_model *model_transformed);
 static void		translate_model(t_model *model_transformed, 
 					double dx, double dy, double dz);
-					
+
 void	move_origin_to_geometric_center(t_model *model_transformed)
 {
 	double	center_x;

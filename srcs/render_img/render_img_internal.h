@@ -6,7 +6,7 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/18 10:33:55 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/25 18:49:35 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/25 21:22:26 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_edge {
 
 void	render_img(t_app *app);
 void	erase_img(t_img *img, t_view *view);
+void	move_origin_to_geometric_center(t_model *model_transformed);
 void	rotate_model(t_app *app);
 void	apply_projection(t_app *app);
 void	apply_perspective_projection(t_app *app);
