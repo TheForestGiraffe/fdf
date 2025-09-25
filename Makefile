@@ -6,7 +6,7 @@
 #    By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/07 15:25:57 by pecavalc          #+#    #+#              #
-#    Updated: 2025/09/25 16:50:31 by pecavalc         ###   ########.fr        #
+#    Updated: 2025/09/25 20:17:52 by pecavalc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,6 +61,7 @@ LOAD_MAP_HEADERS = $(PUB_LOAD_MAP_HEADER_DIR)/fdf_map.h \
 # mlx_handling module
 MLX_HAN_SRCS_DIR = srcs/mlx_handling
 MLX_HAN_SRCS = $(addprefix $(MLX_HAN_SRCS_DIR)/, handle_all_mlx_inits.c \
+												 handle_auto_rotate_model.c \
 												 handle_close.c \
 												 handle_on_button_press.c \
 												 handle_on_button_release.c \
@@ -83,6 +84,7 @@ MLX_HAN_HEADERS = $(PUB_MLX_HAN_HEADER_DIR)/mlx_handling.h \
 # render_img module
 RENDER_FDF_SRCS_DIR = srcs/render_img
 RENDER_FDF_SRCS = $(addprefix $(RENDER_FDF_SRCS_DIR)/, \
+					apply_perspective_projection.c \
 					apply_projection.c \
 					centralize_view_once.c \
 					centralize_view.c \

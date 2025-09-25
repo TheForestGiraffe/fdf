@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handle_on_button_release.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: plima <plima@student.42.fr>                +#+  +:+       +#+        */
+/*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 10:55:28 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/22 12:55:32 by plima            ###   ########.fr       */
+/*   Updated: 2025/09/25 20:59:17 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 #include "render_img.h"
 #include "mlx_handling_internal.h"
 
-static void handle_rmb_release(t_app *app);
+static void	handle_rmb_release(t_app *app);
+static void	handle_mmb_release(t_app *app);
 
 int	handle_on_button_release(int button, int x, int y, void *param)
 {
@@ -26,10 +27,17 @@ int	handle_on_button_release(int button, int x, int y, void *param)
 	app->view.last_mouse_y = y;
 	if (button == RIGHT_MOUSE_BUTTON)
 		handle_rmb_release(app);
+	if (button == MIDDLE_MOUSE_BUTTON)
+		handle_mmb_release(app);
 	return (0);
 }
 
-static void handle_rmb_release(t_app *app)
+static void	handle_rmb_release(t_app *app)
 {
-	app->view.currently_dragging_with_left_mouse_button = false;	
+	app->view.currently_dragging_with_left_mouse_button = false;
+}
+
+static void	handle_mmb_release(t_app *app)
+{
+	app->view.currently_dragging_with_middle_mouse_button = false;
 }

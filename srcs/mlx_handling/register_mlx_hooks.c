@@ -6,7 +6,7 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 10:55:28 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/25 12:19:01 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/25 20:23:38 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,5 @@ void	register_mlx_hooks(t_app *app)
 		&handle_on_button_release, app);
 	mlx_hook(app->window, ON_MOUSE_MOVE, MOUSE_MOVE_MASK, 
 		&handle_on_mouse_move, app);
+	mlx_loop_hook(app->mlx, &handle_auto_rotate_model, app);
 }

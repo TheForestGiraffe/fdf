@@ -6,7 +6,7 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 13:07:59 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/25 16:37:56 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/25 20:56:05 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,11 @@ typedef struct s_projection {
 }	t_projection;
 
 typedef enum e_projection_type {
-	ISO_VIEW = 0,
-	TOP_VIEW = 1,
-	SIDE_VIEW = 2,
-	FRONT_VIEW = 3
+	ISO = 0,
+	ISO_TOP = 1,
+	ISO_SIDE = 2,
+	ISO_FRONT = 3,
+	PERSPECTIVE = 4
 }	t_projection_type;
 
 typedef struct s_view {
@@ -45,10 +46,12 @@ typedef struct s_view {
 	int						zoom_step;
 	int						shift_x;
 	int						shift_y;
-	int						translation_step;
+	float					translation_step;
 	int						color;
 	float					scale_z;
 	bool					currently_dragging_with_left_mouse_button;
+	bool					currently_dragging_with_middle_mouse_button;
+	bool					is_auto_rotate_on;
 	int						last_mouse_x;
 	int						last_mouse_y;
 	double					rot_angle_x;

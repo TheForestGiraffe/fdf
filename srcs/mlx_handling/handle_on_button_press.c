@@ -6,7 +6,7 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 10:55:28 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/25 11:17:22 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/25 20:56:40 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 static void	handle_wheel_scroll(int button, t_app *app);
 static void	handle_rmb_press(t_app *app);
+static void	handle_mmb_press(t_app *app);
 
 int	handle_on_button_press(int button, int x, int y, void *param)
 {
@@ -29,6 +30,8 @@ int	handle_on_button_press(int button, int x, int y, void *param)
 		handle_wheel_scroll(button, app);
 	if (button == RIGHT_MOUSE_BUTTON)
 		handle_rmb_press(app);
+	if (button == MIDDLE_MOUSE_BUTTON)
+		handle_mmb_press(app);
 	return (0);
 }
 
@@ -44,4 +47,9 @@ static void	handle_wheel_scroll(int button, t_app *app)
 static void	handle_rmb_press(t_app *app)
 {
 	app->view.currently_dragging_with_left_mouse_button = true;
+}
+
+static void	handle_mmb_press(t_app *app)
+{
+	app->view.currently_dragging_with_middle_mouse_button = true;
 }

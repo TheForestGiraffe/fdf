@@ -6,13 +6,14 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 15:55:39 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/25 17:02:42 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/25 20:15:00 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <math.h>
 #include "load_map.h"
 #include "fdf.h"
+#include "render_img_internal.h"
 
 static void	apply_isometric_projection(t_app *app);
 static void	apply_parallel_projection_top(t_app *app);
@@ -21,14 +22,16 @@ static void	apply_parallel_projection_front(t_app *app);
 
 void	apply_projection(t_app *app)
 {
-	if (app->view.projection_type == ISO_VIEW)
+	if (app->view.projection_type == ISO)
 		apply_isometric_projection(app);
-	else if (app->view.projection_type == SIDE_VIEW)
+	else if (app->view.projection_type == ISO_SIDE)
 		apply_parallel_projection_side(app);
-	else if (app->view.projection_type == FRONT_VIEW)
+	else if (app->view.projection_type == ISO_FRONT)
 		apply_parallel_projection_front(app);
-	else if (app->view.projection_type == TOP_VIEW)
+	else if (app->view.projection_type == ISO_TOP)
 		apply_parallel_projection_top(app);
+	else if (app->view.projection_type == PERSPECTIVE)
+		apply_perspective_projection(app);
 }
 
 static void	apply_isometric_projection(t_app *app)

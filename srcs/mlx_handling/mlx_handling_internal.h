@@ -6,7 +6,7 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/20 17:27:27 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/25 15:17:50 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/25 20:49:46 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ typedef enum e_buttons {
 	MOUSE_WHEEL_UP_BUTTON = 4,
 	MOUSE_WHEEL_DOWN_BUTTON = 5,
 	RIGHT_MOUSE_BUTTON = 3,
+	MIDDLE_MOUSE_BUTTON = 2
 }	t_buttons;
 
 typedef enum e_keys {
@@ -50,5 +51,6 @@ int		handle_on_key_press(int key, void *param);
 int		handle_on_button_press(int button, int x, int y, void *param);
 int		handle_on_button_release(int button, int x, int y, void *param);
 int		handle_on_mouse_move(int x, int y, void *param);
+int		handle_auto_rotate_model(void *param);
 
 #endif
