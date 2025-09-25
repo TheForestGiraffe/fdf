@@ -6,7 +6,7 @@
 #    By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/07 15:25:57 by pecavalc          #+#    #+#              #
-#    Updated: 2025/09/25 20:17:52 by pecavalc         ###   ########.fr        #
+#    Updated: 2025/09/25 21:20:17 by pecavalc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,6 @@ SRCS = $(addprefix $(SRCS_DIR)/, alloc_projection_vertices.c \
 								 init_projection.c \
 								 init_model_transformed.c \
 								 init_view.c \
-								 move_origin_to_geometric_center.c \
 								 validate_argc.c)
 OBJS = $(patsubst $(SRCS_DIR)/%.c, $(OBJS_DIR)/%.o, $(SRCS))
 
@@ -89,6 +88,7 @@ RENDER_FDF_SRCS = $(addprefix $(RENDER_FDF_SRCS_DIR)/, \
 					centralize_view_once.c \
 					centralize_view.c \
 					erase_img.c \
+					move_origin_to_geometric_center.c \
 					put_pixel.c \
 					render_all_edges.c \
 					render_img.c \
