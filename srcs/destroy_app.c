@@ -6,11 +6,12 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 15:55:39 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/24 13:56:44 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/25 10:30:08 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "mlx.h"
 #include "fdf.h"
 #include "load_map.h"
 

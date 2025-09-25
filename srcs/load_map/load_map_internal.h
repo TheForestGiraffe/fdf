@@ -6,7 +6,7 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 15:55:39 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/24 14:55:51 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/25 10:49:23 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,12 @@
 # include "load_map.h"
 # include "fdf.h"
 
-t_model	*alloc_model(t_app *app);
-void	alloc_model_vertices(t_model *model, t_app *app);
 void	init_model(t_model *model);
-void	parse_map_dimensions(char *filepath, t_app *app);
-void	parse_map(char *filepath, t_app *app);
+void	parse_map_dimensions(char *filepath, t_model *model, t_app *app);
+void	parse_map(char *filepath, t_model *model, t_app *app);
 int		try_open(char *filepath, t_app *app);
 char	*try_get_next_line(int fd, t_app *app);
 char	**try_ft_split(char *line, t_app *app);
+t_model	*create_model(t_app *app);
 
 #endif

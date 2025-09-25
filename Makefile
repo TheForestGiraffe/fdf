@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: plima <plima@student.42.fr>                +#+  +:+       +#+         #
+#    By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/07 15:25:57 by pecavalc          #+#    #+#              #
-#    Updated: 2025/09/22 13:37:14 by plima            ###   ########.fr        #
+#    Updated: 2025/09/25 10:41:26 by pecavalc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,9 +15,16 @@ NAME = fdf
 SRCS_DIR = srcs
 OBJS_DIR = objs
 
-SRCS = $(addprefix $(SRCS_DIR)/, fdf.c \
-								 free_models.c \
+SRCS = $(addprefix $(SRCS_DIR)/, alloc_projection_vertices.c \
+								 alloc_projection.c \
+								 create_projection.c \
+								 create_model_transformed.c \
+								 destroy_app.c \
+								 fdf.c \
+								 init_app.c \
+								 init_img.c \
 								 init_projection.c \
+								 init_model_transformed.c \
 								 init_view.c \
 								 validate_argc.c)
 OBJS = $(patsubst $(SRCS_DIR)/%.c, $(OBJS_DIR)/%.o, $(SRCS))
@@ -28,15 +35,16 @@ HEADER = $(HEADER_DIR)/fdf.h
 
 # load_map module
 LOAD_MAP_SRCS_DIR = srcs/load_map
-LOAD_MAP_SRCS = $(addprefix $(LOAD_MAP_SRCS_DIR)/, free_model_vertices.c \
+LOAD_MAP_SRCS = $(addprefix $(LOAD_MAP_SRCS_DIR)/, alloc_model_vertices.c \
+												   alloc_model.c \
+												   create_model.c \
+												   init_model.c \
 												   load_map.c \
 												   parse_map_dimensions.c \
 												   parse_map.c \
 												   try_ft_split.c \
 												   try_get_next_line.c \
-												   try_open.c \
-												   try_init_model.c \
-												   try_init_model_vertices.c)
+												   try_open.c)
 
 LOAD_MAP_OBJS_DIR = objs/load_map
 LOAD_MAP_OBJS = $(patsubst $(LOAD_MAP_SRCS_DIR)/%.c, \
@@ -72,14 +80,16 @@ MLX_HAN_HEADERS = $(PUB_MLX_HAN_HEADER_DIR)/mlx_handling.h \
 # render_img module
 RENDER_FDF_SRCS_DIR = srcs/render_img
 RENDER_FDF_SRCS = $(addprefix $(RENDER_FDF_SRCS_DIR)/, \
-				   apply_isometric_projection_to_model.c \
-				   apply_rotation_to_model.c \
-				   apply_translation_to_projection.c \
-				   apply_zoom_to_projection.c \
-				   erase_img.c \
-				   put_pixel.c \
-				   render_all_edges.c \
-				   render_img.c)
+					apply_isometric_projection.c \
+					centralize_view_once.c \
+					centralize_view.c \
+					erase_img.c \
+					put_pixel.c \
+					render_all_edges.c \
+					render_img.c \
+					rotate_model.c \
+					translate_projection.c \
+					zoom_projection.c)
 
 RENDER_FDF_OBJS_DIR = objs/render_img
 RENDER_FDF_OBJS = $(patsubst $(RENDER_FDF_SRCS_DIR)/%.c, \

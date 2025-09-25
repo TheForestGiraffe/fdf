@@ -6,7 +6,7 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 13:07:59 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/24 14:52:51 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/25 11:55:04 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ typedef struct s_view {
 	double	rot_angle_x;
 	double	rot_angle_y;
 	double	rot_angle_z;
-	float	rot_sensitivity;
+	float	rot_step;
 }			t_view;
 
 typedef struct s_img {
@@ -72,10 +72,13 @@ typedef struct s_app
 void			validate_argc(int argc);
 void			init_app(t_app *app);
 void			init_img(t_img *img);
-t_model			*init_transformed_model(t_model *model);
-t_projection	*create_projection(t_model *model);
+t_model			*create_model_transformed(t_app *app);
+void			init_model_transformed(t_model *init_model_transformed, 
+					t_model *model);
+t_projection	*create_projection(t_app *app);
 t_projection	*alloc_projection(t_app *app);
 void			init_projection(t_projection *projection, t_model *model);
+void			alloc_projection_vertices(t_projection *projeciton, t_app *app);
 void			init_view(t_view *view);
 void			destroy_app(t_app *app, int exit_code);
 

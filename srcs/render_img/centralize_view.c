@@ -6,7 +6,7 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 11:22:09 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/24 12:12:19 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/25 11:16:23 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ static int	centralize_x(t_view *view, t_projection *projection)
 	double	x_min;
 	double	x_max;
 
-	x_min = 0;
-	x_max = 0;
+	x_min = projection->vertices[0][0].x;
+	x_max = projection->vertices[0][0].x;
 	j = 0;
 	while (j < projection->rows)
 	{
@@ -44,7 +44,7 @@ static int	centralize_x(t_view *view, t_projection *projection)
 		}
 		j++;
 	}
-	return ((x_min + x_max) / 2.0);
+	return ((view->width / 2) - ((x_min + x_max) / 2.0));
 }
 
 static int	centralize_y(t_view *view, t_projection *projection)
@@ -54,8 +54,8 @@ static int	centralize_y(t_view *view, t_projection *projection)
 	double	y_min;
 	double	y_max;
 
-	y_min = 0;
-	y_max = 0;
+	y_min = projection->vertices[0][0].y;
+	y_max = projection->vertices[0][0].y;
 	j = 0;
 	while (j < projection->rows)
 	{
@@ -70,5 +70,5 @@ static int	centralize_y(t_view *view, t_projection *projection)
 		}
 		j++;
 	}
-	return ((y_min + y_max) / 2.0);
+	return ((view->height / 2) - ((y_min + y_max) / 2.0));
 }

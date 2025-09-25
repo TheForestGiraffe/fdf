@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   create_projection.c                                :+:      :+:    :+:   */
+/*   centralize_view_once.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/09 15:55:39 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/25 10:58:31 by pecavalc         ###   ########.fr       */
+/*   Created: 2025/09/25 09:55:48 by pecavalc          #+#    #+#             */
+/*   Updated: 2025/09/25 10:13:22 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
+#include "render_img_internal.h"
 
-t_projection	*create_projection(t_app *app)
+void	centralize_view_once(t_view *view, t_projection *projection)
 {
-	t_projection	*projection;
-
-	projection = alloc_projection(app);
-	init_projection(projection, app->model_transformed);
-	alloc_projection_vertices(projection, app);
-	return (projection);
+	if ((view->shift_x == 0) && (view->shift_y == 0))
+		centralize_view(view, projection);
 }

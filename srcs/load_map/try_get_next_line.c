@@ -6,7 +6,7 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 15:55:39 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/24 14:11:07 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/25 10:36:16 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*try_get_next_line(int fd, t_app *app)
 	line = get_next_line(fd);
 	if (!line)
 	{
-		ft_pustr_fd("get_next_line: returned null.\n");
+		ft_putstr_fd("get_next_line: returned null.\n", 2);
 		destroy_app(app, EXIT_FAILURE);
 	}
 	return (line);

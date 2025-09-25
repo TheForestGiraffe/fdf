@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   create_projection.c                                :+:      :+:    :+:   */
+/*   init_model_transformed.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 15:55:39 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/25 10:58:31 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/25 10:38:55 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include <stdlib.h>
+#include "load_map.h"
 
-t_projection	*create_projection(t_app *app)
+void	init_model_transformed(t_model *model_transformed, t_model *model)
 {
-	t_projection	*projection;
-
-	projection = alloc_projection(app);
-	init_projection(projection, app->model_transformed);
-	alloc_projection_vertices(projection, app);
-	return (projection);
+	model_transformed->rows = model->rows;
+	model_transformed->columns = model->columns;
+	model_transformed->vertices = NULL;
 }

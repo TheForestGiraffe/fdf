@@ -6,7 +6,7 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 15:55:39 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/24 14:16:56 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/25 10:48:03 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 static void		count_and_set_nr_columns(char **split_line, t_model *model);
 static void		count_and_set_nr_rows(char *line, int fd, t_model *model);
 
-void	parse_map_dimensions(char *filepath, t_app *app)
+void	parse_map_dimensions(char *filepath, t_model *model, t_app *app)
 {
 	int		fd;
 	char	*line;
@@ -28,8 +28,8 @@ void	parse_map_dimensions(char *filepath, t_app *app)
 	fd = try_open(filepath, app);
 	line = try_get_next_line(fd, app);
 	split_line = try_ft_split(line, app);
-	count_and_set_nr_columns(split_line, app->model);
-	count_and_set_nr_rows(line, fd, app->model);
+	count_and_set_nr_columns(split_line, model);
+	count_and_set_nr_rows(line, fd, model);
 	close(fd);
 }
 

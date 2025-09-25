@@ -6,7 +6,7 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 00:02:10 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/24 12:03:11 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/25 12:35:02 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,5 @@ void	init_view(t_view *view)
 	view->rot_angle_x = 0;
 	view->rot_angle_y = 0;
 	view->rot_angle_z = 0;
-	view->rot_sensitivity = 0.005;
+	view->rot_step = 0.005;
 }

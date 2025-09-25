@@ -6,44 +6,16 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 14:44:52 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/24 14:57:38 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/25 09:39:32 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "fdf.h"
 
-void	init_projection(t_projection *projection, t_model *model)
+void	init_projection(t_projection *projection, t_model *model_transformed)
 {
-	projection->rows = model->rows;
-	projection->columns = model->columns;
-}
-
-static int	init_projection_vertices(t_model *model, t_projection *projection)
-{
-	int	y;
-
-	projection->vertices = malloc(projection->rows * sizeof(t_2d_vertex *));
-	if (!projection->vertices)
-	{
-		free_models(model, projection);
-		return (1);
-	}
-	y = 0;
-	while (y < projection->rows)
-	{
-		projection->vertices[y] = 
-			malloc(projection->columns * sizeof(t_2d_vertex));
-		if (!projection->vertices[y])
-		{
-			while (y > 0)
-				free(projection->vertices[--y]);
-			free(projection->vertices);
-			projection->vertices = NULL;
-			free_models(model, projection);
-			return (1);
-		}
-		y++;
-	}
-	return (0);
+	projection->rows = model_transformed->rows;
+	projection->columns = model_transformed->columns;
+	projection->vertices = NULL;
 }

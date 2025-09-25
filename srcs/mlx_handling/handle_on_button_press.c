@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handle_on_button_press.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: plima <plima@student.42.fr>                +#+  +:+       +#+        */
+/*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 10:55:28 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/22 13:29:56 by plima            ###   ########.fr       */
+/*   Updated: 2025/09/25 11:17:22 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "mlx_handling_internal.h"
 
 static void	handle_wheel_scroll(int button, t_app *app);
-static void handle_rmb_press(t_app *app);
+static void	handle_rmb_press(t_app *app);
 
 int	handle_on_button_press(int button, int x, int y, void *param)
 {
@@ -41,7 +41,7 @@ static void	handle_wheel_scroll(int button, t_app *app)
 	render_img(app);
 }
 
-static void handle_rmb_press(t_app *app)
+static void	handle_rmb_press(t_app *app)
 {
 	app->view.currently_dragging_with_left_mouse_button = true;
 }
