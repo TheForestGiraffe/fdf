@@ -6,7 +6,7 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 15:55:39 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/25 16:55:17 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/25 17:02:42 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,15 +59,63 @@ static void	apply_isometric_projection(t_app *app)
 
 static void	apply_parallel_projection_top(t_app *app)
 {
-	(void) app;
+	int		i;
+	int		j;
+
+	j = 0;
+	while (j < app->model_transformed->rows)
+	{
+		i = 0;
+		while (i < app->model_transformed->columns)
+		{
+			app->projection->vertices[j][i].x = 
+				app->model_transformed->vertices[j][i].x;
+			app->projection->vertices[j][i].y = 
+				app->model_transformed->vertices[j][i].y;
+			i++;
+		}
+		j++;
+	}
 }
 
 static void	apply_parallel_projection_side(t_app *app)
 {
-	(void) app;
+	int		i;
+	int		j;
+
+	j = 0;
+	while (j < app->model_transformed->rows)
+	{
+		i = 0;
+		while (i < app->model_transformed->columns)
+		{
+			app->projection->vertices[j][i].x = 
+				app->model_transformed->vertices[j][i].x;
+			app->projection->vertices[j][i].y = 
+				-app->model_transformed->vertices[j][i].z;
+			i++;
+		}
+		j++;
+	}
 }
 
 static void	apply_parallel_projection_front(t_app *app)
 {
-	(void) app;
+	int		i;
+	int		j;
+
+	j = 0;
+	while (j < app->model_transformed->rows)
+	{
+		i = 0;
+		while (i < app->model_transformed->columns)
+		{
+			app->projection->vertices[j][i].x = 
+				app->model_transformed->vertices[j][i].y;
+			app->projection->vertices[j][i].y = 
+				-app->model_transformed->vertices[j][i].z;
+			i++;
+		}
+		j++;
+	}
 }
