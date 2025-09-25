@@ -6,7 +6,7 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 16:49:44 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/25 10:37:43 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/25 16:05:40 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 void	render_img(t_app *app)
 {
 	erase_img(&app->img, &app->view);
+	copy_model_vertices(app->model, app->model_transformed);
+	move_origin_to_geometric_center(app->model_transformed);
 	rotate_model(app);
 	apply_isometric_projection(app);
 	zoom_projection(app);

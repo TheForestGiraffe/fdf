@@ -6,7 +6,7 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 00:02:10 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/25 12:35:02 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/25 16:09:46 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ void	init_view(t_view *view)
 	view->shift_y = 0;
 	view->translation_step = 10;
 	view->color = 0x00FFFF00;
-	view->scale_z = 0.2;
+	view->scale_z = 1;
 	view->currently_dragging_with_left_mouse_button = false;
 	view->last_mouse_x = 0;
 	view->last_mouse_y = 0;
 	view->rot_angle_x = 0;
 	view->rot_angle_y = 0;
 	view->rot_angle_z = 0;
-	view->rot_step = 0.005;
+	view->rot_step = 0.01;
 }

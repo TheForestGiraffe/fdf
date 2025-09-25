@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mlx_handling_internal.h                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: plima <plima@student.42.fr>                +#+  +:+       +#+        */
+/*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/20 17:27:27 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/22 13:29:37 by plima            ###   ########.fr       */
+/*   Updated: 2025/09/25 15:17:50 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,14 @@ typedef enum e_keys {
 	DOWN_ARROW_PRESS = 65364
 }	t_keys;
 
-int	handle_close(t_app *app);
-int	handle_on_key_press(int key, void *param);
-int	handle_on_button_press(int button, int x, int y, void *param);
-int	handle_on_button_release(int button, int x, int y, void *param);
-int	handle_on_mouse_move(int x, int y, void *param);
+void	init_mlx(t_app *app);
+void	init_mlx_window(t_app *app);
+void	register_mlx_hooks(t_app *app);
+void	init_mlx_img(void *mlx, t_view *view, t_img *img);
+int		handle_close(t_app *app);
+int		handle_on_key_press(int key, void *param);
+int		handle_on_button_press(int button, int x, int y, void *param);
+int		handle_on_button_release(int button, int x, int y, void *param);
+int		handle_on_mouse_move(int x, int y, void *param);
 
 #endif

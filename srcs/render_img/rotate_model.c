@@ -6,12 +6,15 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 12:47:58 by plima             #+#    #+#             */
-/*   Updated: 2025/09/25 11:08:28 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/25 15:48:39 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <math.h>
 #include "fdf.h"
+#include <stdio.h> // TODO : remove
+
+// TODO use only transformed model
 
 static void	rotate_vertex_around_x(int i, int j, t_app *app);
 static void	rotate_vertex_around_y(int i, int j, t_app *app);
@@ -43,10 +46,9 @@ static void	rotate_vertex_around_x(int i, int j, t_app *app)
 	double	z;
 	double	theta;
 
-	y = app->model->vertices[j][i].y;
-	z = app->model->vertices[j][i].z;
+	y = app->model_transformed->vertices[j][i].y;
+	z = app->model_transformed->vertices[j][i].z;
 	theta = app->view.rot_angle_x;
-	app->model_transformed->vertices[j][i].x = app->model->vertices[j][i].x;
 	app->model_transformed->vertices[j][i].y = y * cos(theta) - z * sin(theta);
 	app->model_transformed->vertices[j][i].z = y * sin(theta) + z * cos(theta);
 }

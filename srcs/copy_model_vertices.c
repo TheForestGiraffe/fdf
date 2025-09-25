@@ -1,21 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mlx_handling.h                                     :+:      :+:    :+:   */
+/*   copy_model_vertices.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/20 17:46:52 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/25 15:17:29 by pecavalc         ###   ########.fr       */
+/*   Created: 2025/09/25 14:02:15 by pecavalc          #+#    #+#             */
+/*   Updated: 2025/09/25 14:07:45 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MLX_HANDLING_H
-# define MLX_HANDLING_H
+#include "fdf.h"
 
-# include "fdf.h" // for t_app
+void	copy_model_vertices(t_model *src, t_model *dst)
+{
+	int	i;
+	int	j;
 
-// mlx_handling.c
-void	handle_all_mlx_inits(t_app *app);
-
-#endif
+	j = 0;
+	while (j < src->rows)
+	{
+		i = 0;
+		while (i < src->columns)
+		{
+			dst->vertices[j][i] = src->vertices[j][i];
+			i++;
+		}
+		j++;
+	}
+}

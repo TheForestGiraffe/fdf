@@ -6,7 +6,7 @@
 #    By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/07 15:25:57 by pecavalc          #+#    #+#              #
-#    Updated: 2025/09/25 10:41:26 by pecavalc         ###   ########.fr        #
+#    Updated: 2025/09/25 15:44:34 by pecavalc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ OBJS_DIR = objs
 
 SRCS = $(addprefix $(SRCS_DIR)/, alloc_projection_vertices.c \
 								 alloc_projection.c \
+								 copy_model_vertices.c \
 								 create_projection.c \
 								 create_model_transformed.c \
 								 destroy_app.c \
@@ -26,6 +27,7 @@ SRCS = $(addprefix $(SRCS_DIR)/, alloc_projection_vertices.c \
 								 init_projection.c \
 								 init_model_transformed.c \
 								 init_view.c \
+								 move_origin_to_geometric_center.c \
 								 validate_argc.c)
 OBJS = $(patsubst $(SRCS_DIR)/%.c, $(OBJS_DIR)/%.o, $(SRCS))
 
@@ -58,7 +60,8 @@ LOAD_MAP_HEADERS = $(PUB_LOAD_MAP_HEADER_DIR)/fdf_map.h \
 
 # mlx_handling module
 MLX_HAN_SRCS_DIR = srcs/mlx_handling
-MLX_HAN_SRCS = $(addprefix $(MLX_HAN_SRCS_DIR)/, handle_close.c \
+MLX_HAN_SRCS = $(addprefix $(MLX_HAN_SRCS_DIR)/, handle_all_mlx_inits.c \
+												 handle_close.c \
 												 handle_on_button_press.c \
 												 handle_on_button_release.c \
 												 handle_on_key_press.c \

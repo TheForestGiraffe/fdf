@@ -6,7 +6,7 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 10:55:28 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/25 11:54:51 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/25 14:30:11 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,13 +67,13 @@ static bool	is_rotation_key(int key, t_view *view)
 	else if (key == XK_d)
 		view->rot_angle_y += view->rot_step;
 	else if (key == XK_w)
-		view->rot_angle_x -= view->rot_step;
-	else if (key == XK_s)
 		view->rot_angle_x += view->rot_step;
+	else if (key == XK_s)
+		view->rot_angle_x -= view->rot_step;
 	else if (key == XK_q)
-		view->rot_angle_z -= view->rot_step;
-	else if (key == XK_z)
 		view->rot_angle_z += view->rot_step;
+	else if (key == XK_z)
+		view->rot_angle_z -= view->rot_step;
 	if (key == XK_a || key == XK_d || key == XK_w || key == XK_s || 
 		key == XK_q || key == XK_z)
 		return (true);
