@@ -6,7 +6,7 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 00:02:10 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/25 16:09:46 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/25 16:38:23 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,5 @@ void	init_view(t_view *view)
 	view->rot_angle_y = 0;
 	view->rot_angle_z = 0;
 	view->rot_step = 0.01;
+	view->projection_type = ISO_VIEW;
 }

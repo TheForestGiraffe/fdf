@@ -6,7 +6,7 @@
 #    By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/07 15:25:57 by pecavalc          #+#    #+#              #
-#    Updated: 2025/09/25 15:44:34 by pecavalc         ###   ########.fr        #
+#    Updated: 2025/09/25 16:50:31 by pecavalc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -83,7 +83,7 @@ MLX_HAN_HEADERS = $(PUB_MLX_HAN_HEADER_DIR)/mlx_handling.h \
 # render_img module
 RENDER_FDF_SRCS_DIR = srcs/render_img
 RENDER_FDF_SRCS = $(addprefix $(RENDER_FDF_SRCS_DIR)/, \
-					apply_isometric_projection.c \
+					apply_projection.c \
 					centralize_view_once.c \
 					centralize_view.c \
 					erase_img.c \

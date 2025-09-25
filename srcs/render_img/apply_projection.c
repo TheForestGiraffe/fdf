@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   apply_isometric_projection.c                       :+:      :+:    :+:   */
+/*   apply_projection.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 15:55:39 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/25 11:12:14 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/25 16:55:17 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,24 @@
 #include "load_map.h"
 #include "fdf.h"
 
-void	apply_isometric_projection(t_app *app)
+static void	apply_isometric_projection(t_app *app);
+static void	apply_parallel_projection_top(t_app *app);
+static void	apply_parallel_projection_side(t_app *app);
+static void	apply_parallel_projection_front(t_app *app);
+
+void	apply_projection(t_app *app)
+{
+	if (app->view.projection_type == ISO_VIEW)
+		apply_isometric_projection(app);
+	else if (app->view.projection_type == SIDE_VIEW)
+		apply_parallel_projection_side(app);
+	else if (app->view.projection_type == FRONT_VIEW)
+		apply_parallel_projection_front(app);
+	else if (app->view.projection_type == TOP_VIEW)
+		apply_parallel_projection_top(app);
+}
+
+static void	apply_isometric_projection(t_app *app)
 {
 	int		i;
 	int		j;
@@ -38,4 +55,19 @@ void	apply_isometric_projection(t_app *app)
 		}
 		j++;
 	}
+}
+
+static void	apply_parallel_projection_top(t_app *app)
+{
+	(void) app;
+}
+
+static void	apply_parallel_projection_side(t_app *app)
+{
+	(void) app;
+}
+
+static void	apply_parallel_projection_front(t_app *app)
+{
+	(void) app;
 }

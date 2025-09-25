@@ -6,7 +6,7 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 13:07:59 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/25 15:41:01 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/25 16:37:56 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,23 +31,31 @@ typedef struct s_projection {
 	t_2d_vertex		**vertices;
 }	t_projection;
 
+typedef enum e_projection_type {
+	ISO_VIEW = 0,
+	TOP_VIEW = 1,
+	SIDE_VIEW = 2,
+	FRONT_VIEW = 3
+}	t_projection_type;
+
 typedef struct s_view {
-	int		width;
-	int		height;
-	int		zoom;
-	int		zoom_step;
-	int		shift_x;
-	int		shift_y;
-	int		translation_step;
-	int		color;
-	float	scale_z;
-	bool	currently_dragging_with_left_mouse_button;
-	int		last_mouse_x;
-	int		last_mouse_y;
-	double	rot_angle_x;
-	double	rot_angle_y;
-	double	rot_angle_z;
-	float	rot_step;
+	int						width;
+	int						height;
+	int						zoom;
+	int						zoom_step;
+	int						shift_x;
+	int						shift_y;
+	int						translation_step;
+	int						color;
+	float					scale_z;
+	bool					currently_dragging_with_left_mouse_button;
+	int						last_mouse_x;
+	int						last_mouse_y;
+	double					rot_angle_x;
+	double					rot_angle_y;
+	double					rot_angle_z;
+	float					rot_step;
+	t_projection_type		projection_type;
 }			t_view;
 
 typedef struct s_img {
