@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   try_ft_split.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: plima <plima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 15:55:39 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/24 14:13:19 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/26 12:39:21 by plima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
+#include "fdf.h"
 #include "load_map.h"
 #include "load_map_internal.h"
 
