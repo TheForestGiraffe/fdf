@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+         #
+#    By: plima <plima@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/07 15:25:57 by pecavalc          #+#    #+#              #
-#    Updated: 2025/09/25 21:20:17 by pecavalc         ###   ########.fr        #
+#    Updated: 2025/09/26 12:22:03 by plima            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -121,13 +121,13 @@ LIBMLX_DIR = libs/minilibx-linux
 LIBMLX_HEADER_DIR = $(LIBMLX_DIR)
 LIBMLX = $(LIBMLX_DIR)/libmlx_Linux.a
 
-CFLAGS = -Wall -Wextra -Werror -g -I$(HEADER_DIR) -I$(PUB_LOAD_MAP_HEADER_DIR) \
-								  -I$(PRIV_LOAD_MAP_HEADER_DIR) \
-								  -I$(PUB_MLX_HAN_HEADER_DIR) \
-								  -I$(PRIV_MLX_HAN_HEADER_DIR) \
-								  -I$(PUB_RENDER_FDF_HEADER_DIR) \
-								  -I$(PRIV_RENDER_FDF_HEADER_DIR) \
-								  -I$(LIBFT_HEADER_DIR) -I$(LIBMLX_HEADER_DIR)
+CFLAGS = -Wall -Wextra -Werror -I$(HEADER_DIR) -I$(PUB_LOAD_MAP_HEADER_DIR) \
+							   -I$(PRIV_LOAD_MAP_HEADER_DIR) \
+							   -I$(PUB_MLX_HAN_HEADER_DIR) \
+							   -I$(PRIV_MLX_HAN_HEADER_DIR) \
+							   -I$(PUB_RENDER_FDF_HEADER_DIR) \
+							   -I$(PRIV_RENDER_FDF_HEADER_DIR) \
+							   -I$(LIBFT_HEADER_DIR) -I$(LIBMLX_HEADER_DIR)
 
 all: $(OBJS_DIRS) $(NAME)
 
