@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   alloc_model_vertices.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: plima <plima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 15:55:39 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/24 14:24:47 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/26 12:28:31 by plima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "libft.h"
+#include <stdio.h>
 #include "fdf.h"
 #include "load_map.h"
 
@@ -22,7 +22,7 @@ void	alloc_model_vertices(t_model *model, t_app *app)
 	model->vertices = malloc(model->rows * sizeof(t_3d_vertex *));
 	if (!model->vertices)
 	{
-		ft_putstr_fd("alloc_model_vertices: 1st malloc failed.\n", 2);
+		perror("alloc_model_vertices: 1st malloc failed.\n");
 		destroy_app(app, EXIT_FAILURE);
 	}
 	y = 0;
@@ -33,7 +33,7 @@ void	alloc_model_vertices(t_model *model, t_app *app)
 		{
 			while (y > 0)
 				free(model->vertices[--y]);
-			ft_putstr_fd("alloc_model_vertices: 2nd malloc failed.\n", 2);
+			perror("alloc_model_vertices: 2nd malloc failed.\n");
 			destroy_app(app, EXIT_FAILURE);
 		}
 		y++;
