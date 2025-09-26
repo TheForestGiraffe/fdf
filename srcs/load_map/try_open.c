@@ -6,7 +6,7 @@
 /*   By: plima <plima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 15:55:39 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/26 12:40:06 by plima            ###   ########.fr       */
+/*   Updated: 2025/09/26 12:47:41 by plima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 #include <fcntl.h>
 #include <stdio.h>
 #include "fdf.h"
-#include "libft.h"
-#include "load_map.h"
-#include "load_map_internal.h"
 
 int	try_open(char *filepath, t_app *app)
 {
