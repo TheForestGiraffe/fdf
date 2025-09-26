@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   create_model.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: plima <plima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 15:55:39 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/25 10:35:37 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/26 12:32:24 by plima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "fdf.h"
 #include "load_map.h"
 #include "load_map_internal.h"
 
