@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   load_map_internal.h                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: plima <plima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 15:55:39 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/25 10:49:23 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/26 12:37:14 by plima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define LOAD_MAP_INTERNAL_H
 
 # include "load_map.h"
-# include "fdf.h"
 
 void	init_model(t_model *model);
 void	parse_map_dimensions(char *filepath, t_model *model, t_app *app);
