@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handle_on_button_press.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: plima <plima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 10:55:28 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/25 20:56:40 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/26 13:17:40 by plima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,11 @@ int	handle_on_button_press(int button, int x, int y, void *param)
 static void	handle_wheel_scroll(int button, t_app *app)
 {
 	if (button == MOUSE_WHEEL_DOWN_BUTTON)
+	{
 		app->view.zoom -= app->view.zoom_step;
+		if (app->view.zoom < 0.1)
+			app->view.zoom = 0.1;
+	}
 	if (button == MOUSE_WHEEL_UP_BUTTON)
 		app->view.zoom += app->view.zoom_step;
 	render_img(app);
