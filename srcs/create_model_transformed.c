@@ -3,14 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   create_model_transformed.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: plima <plima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 15:55:39 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/25 14:10:34 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/26 13:07:32 by plima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "fdf.h"
 #include "load_map.h"
 

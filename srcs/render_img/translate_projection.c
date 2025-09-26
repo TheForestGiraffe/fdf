@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   translate_projection.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: plima <plima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 07:29:45 by plima             #+#    #+#             */
-/*   Updated: 2025/09/25 09:58:30 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/26 13:04:43 by plima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
-#include "mlx_handling_internal.h"
-#include "render_img.h"
 
 void	translate_projection(t_app *app)
 {

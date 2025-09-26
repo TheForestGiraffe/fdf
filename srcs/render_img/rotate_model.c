@@ -3,18 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   rotate_model.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: plima <plima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 12:47:58 by plima             #+#    #+#             */
-/*   Updated: 2025/09/25 15:48:39 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/26 13:02:40 by plima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <math.h>
 #include "fdf.h"
-#include <stdio.h> // TODO : remove
-
-// TODO use only transformed model
 
 static void	rotate_vertex_around_x(int i, int j, t_app *app);
 static void	rotate_vertex_around_y(int i, int j, t_app *app);

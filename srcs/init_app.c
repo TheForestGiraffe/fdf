@@ -3,20 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   init_app.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: plima <plima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 10:35:03 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/24 12:03:58 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/26 13:10:23 by plima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/* Initialize all variables in app, incl. pointers to NULL.
- * 
- * Setting NULL pointers allows calling free/destroy at any point, also when one
- * or more variables were not yet allocated, as freeing a NULL pointer is a
- * defined behavior.
- * 
-*/
 
 #include "fdf.h"
 #include <stddef.h>

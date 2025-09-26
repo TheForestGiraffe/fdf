@@ -3,18 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   init_mlx_img.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: plima <plima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 10:55:28 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/21 00:55:10 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/26 12:53:39 by plima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 #include "mlx.h"
-#include "mlx_handling_internal.h"
-#include <stdlib.h>
-#include <X11/keysym.h>
 
 void	init_mlx_img(void *mlx, t_view *view, t_img *img)
 {
