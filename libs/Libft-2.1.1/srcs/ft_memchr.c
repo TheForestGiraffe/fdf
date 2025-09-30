@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_ft_swap.c                                     :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/18 20:35:41 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/18 13:35:23 by pecavalc         ###   ########.fr       */
+/*   Created: 2025/05/18 19:03:32 by pecavalc          #+#    #+#             */
+/*   Updated: 2025/09/30 11:17:00 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "libft.h"
+#include <stddef.h>
 
-int	test_ft_swap(void)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int	a;
-	int	b;
-	
-	a = 348;
-	b = 209943;
-	ft_swap(&a, &b);
-	if (a != 209943)
-		return (0);
-	if (b != 348)
-		return (0);
-	return (1);
+	size_t				i;
+	const unsigned char	*ptr;
+
+	ptr = (const unsigned char *)s;
+	i = 0;
+	while (i < n)
+	{
+		if (ptr[i] == (unsigned char)c)
+			return ((void *)(ptr + i));
+		i++;
+	}
+	return (NULL);
 }

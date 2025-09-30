@@ -112,7 +112,7 @@ OBJS_DIRS = $(OBJS_DIR) $(LOAD_MAP_OBJS_DIR) $(RENDER_FDF_OBJS_DIR) \
 
 
 # Libft
-LIBFT_DIR = libs/Libft-2.1.0
+LIBFT_DIR = libs/Libft-2.1.1
 LIBFT_HEADER_DIR = $(LIBFT_DIR)/include
 LIBFT = $(LIBFT_DIR)/libft.a
 
