@@ -6,7 +6,7 @@
 /*   By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 13:07:59 by pecavalc          #+#    #+#             */
-/*   Updated: 2025/09/25 21:25:47 by pecavalc         ###   ########.fr       */
+/*   Updated: 2025/09/30 10:32:05 by pecavalc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ typedef enum e_projection_type {
 typedef struct s_view {
 	int						width;
 	int						height;
-	int						zoom;
+	double					zoom;
 	int						zoom_step;
 	int						shift_x;
 	int						shift_y;
