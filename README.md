@@ -5,15 +5,35 @@ It consists of rendering a 3D wireframe representation of a height map (`.fdf` f
 
 This implementation focuses on smooth interaction, multiple viewing modes, and real-time transformations.
 
+---
+
+## Table of Contents
+
+- [Preview](#preview)
+- [Features](#features)
+  - [Mandatory](#mandatory)
+  - [Bonus (Implemented)](#bonus-implemented)
+- [Controls](#controls)
+  - [Keyboard](#keyboard)
+  - [Mouse](#mouse)
+- [How to Build](#how-to-build)
+- [Usage](#usage)
+- [.fdf File Format](#fdf-file-format)
+
+---
+
 ## Preview
 
 <p align="center">
 <img width="480" alt="fdf screenshot" src="https://github.com/user-attachments/assets/79d3e81d-4091-4b67-8ad7-b8f1b8275188" />
 </p>
 
+---
+
 ## Features
 
 ### Mandatory
+
 - Parse `.fdf` height maps
 - Build a grid of 3D points `(x, y, z)`
 - Project 3D coordinates into 2D space
@@ -22,6 +42,7 @@ This implementation focuses on smooth interaction, multiple viewing modes, and r
 - Handle window close and ESC key
 
 ### Bonus (Implemented)
+
 - ✅ Mouse-based translation (middle click + drag)
 - ✅ Mouse-based rotation (right click + drag)
 - ✅ Continuous automatic rotation
@@ -33,35 +54,40 @@ This implementation focuses on smooth interaction, multiple viewing modes, and r
 - ✅ Real-time zoom
 - ✅ Smooth image rendering
 
+---
+
 ## Controls
 
 ### Keyboard
 
-| Key          | Action                          |
-|--------------|---------------------------------|
-| `ESC`        | Exit program                     |
-| `X` (window button) | Close window                     |
-| `R`          | Start / toggle automatic rotation |
-| `I`          | Switch to isometric view         |
-| `P`          | Switch to perspective view       |
-| `Z`          | Top view                         |
-| `X`          | Side view                        |
-| `Y`          | Front view                       |
-| `+`          | Zoom in                         |
-| `-`          | Zoom out                         |
-| `← ↑ ↓ →`    | Translate (move map)             |
+| Key              | Action                           |
+|------------------|----------------------------------|
+| `ESC`            | Exit program                     |
+| `X` (window btn) | Close window                     |
+| `R`              | Toggle automatic rotation        |
+| `I`              | Isometric view                   |
+| `P`              | Perspective view                 |
+| `Z`              | Top view                         |
+| `X`              | Side view                        |
+| `Y`              | Front view                       |
+| `+`              | Zoom in                          |
+| `-`              | Zoom out                         |
+| `← ↑ ↓ →`        | Translate map                    |
 
 ### Mouse
 
-| Action                     | Result        |
-|----------------------------|---------------|
-| Middle Click + Drag        | Translate map |
-| Right Click + Drag         | Rotate view   |
-| Mouse Wheel Scroll         | Zoom  |
+| Action              | Result        |
+|---------------------|---------------|
+| Middle Click + Drag | Translate map |
+| Right Click + Drag  | Rotate view   |
+| Scroll Wheel        | Zoom          |
+
+---
 
 ## How to Build
 
 ### Requirements
+
 - C compiler (`cc`)
 - `make`
 - MiniLibX (42 version)
@@ -74,35 +100,44 @@ make
 ```
 
 ### Clean
+
 ```bash
 make clean
 make fclean
 make re
 ```
 
-### Usage
+---
+
+## Usage
+
+Run with a map file:
+
 ```bash
 ./fdf maps/<map>.fdf
 ```
 
-### Example:
+Example:
 
 ```bash
 ./fdf maps/42.fdf
 ```
 
+---
+
 ## .fdf File Format
 
-An .fdf file contains a grid of heights:
-- Each number represents a Z value
-- Position in the grid defines X and Y
+An `.fdf` file contains a grid of heights:
 
-Optional hexadecimal color may be present. This version will ignore it.
+- Each number represents a Z value
+- Position in the grid defines X and Y coordinates
+- Optional hexadecimal color values may be present (ignored in this implementation)
 
 Example:
 
-0  0  0  0  
-0  1  2  0  
-0  2  4  0  
+```text
 0  0  0  0
-
+0  1  2  0
+0  2  4  0
+0  0  0  0
+```
