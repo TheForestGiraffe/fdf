@@ -24,9 +24,10 @@ This implementation focuses on smooth interaction, multiple viewing modes, and r
 
 ## Preview
 
-<div align=¨center¨>
 https://github.com/user-attachments/assets/b1c35ecb-aecd-4aa0-a9c1-3d20ad801f21
-</div>
+
+Music credit:   
+Saison, Kid Enigma - The Break Dub - Dub Mix (https://open.spotify.com/track/3ot1sAc8Eqep3Ph5Nu3ycB?si=2fe8d78a6a5240b4)
 
 ---
 
