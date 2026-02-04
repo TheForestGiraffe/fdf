@@ -24,9 +24,9 @@ This implementation focuses on smooth interaction, multiple viewing modes, and r
 
 ## Preview
 
-<p align="center">
-<img width="480" alt="fdf screenshot" src="https://github.com/user-attachments/assets/79d3e81d-4091-4b67-8ad7-b8f1b8275188" />
-</p>
+<div align=¨center¨>
+https://github.com/user-attachments/assets/b1c35ecb-aecd-4aa0-a9c1-3d20ad801f21
+</div>
 
 ---
 
