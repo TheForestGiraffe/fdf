@@ -20,7 +20,9 @@ int	handle_auto_rotate_model(void *param)
 	app = (t_app *)param;
 	if (app->view.is_auto_rotate_on)
 	{
-		app->view.rot_angle_z += app->view.rot_step / 5;
+		app->view.rot_angle_x += app->view.rot_step / 7;
+		app->view.rot_angle_y += app->view.rot_step / 7;
+		app->view.rot_angle_z += app->view.rot_step / 7;
 		render_img(app);
 	}
 	return (0);
