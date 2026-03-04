@@ -120,12 +120,12 @@ static bool	is_projection_type_key(int key, t_view *view)
 
 static bool	is_z_scale_key(int key, t_view *view)
 {
-	if (key == XK_KP_Add)
+	if (key == XK_j)
 	{
 		view->scale_z += 0.02;
 		return (true);
 	}
-	if (key == XK_KP_Subtract)
+	if (key == XK_h)
 	{
 		view->scale_z -= 0.02;
 		return (true);

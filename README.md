@@ -75,7 +75,7 @@ Saison, Kid Enigma - The Break Dub - Dub Mix (https://open.spotify.com/track/3ot
 | `W` / `S`        | Rotate around **X axis** (`W`: +, `S`: -) |
 | `A` / `D`        | Rotate around **Y axis** (`A`: -, `D`: +) |
 | `Q` / `E`        | Rotate around **Z axis** (`Q`: -, `E`: +) |
-| `Numpad +` / `Numpad -` | Increase / decrease **height scale** (Z exaggeration) |
+| `h` / `j` | Decrease / Increase **height scale** (Z exaggeration) |
 
 > Notes:
 > - Zoom is handled via the **mouse wheel** in this implementation.
