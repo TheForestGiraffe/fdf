@@ -1,0 +1,28 @@
+name: FdF CI Pipeline
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  fdf_build:
+    name: "FdF: Build"
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Build Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            build-essential \
+            libx11-dev \
+            libxext-dev \
+            zlib1g-dev
+
+      - name: Build FdF
+        run: make
+
+      - name: Clean Build
+        run: make fclean
