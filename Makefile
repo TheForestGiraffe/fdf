@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: plima <plima@student.42.fr>                +#+  +:+       +#+         #
+#    By: pecavalc <pecavalc@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/07 15:25:57 by pecavalc          #+#    #+#              #
-#    Updated: 2025/09/26 12:22:03 by plima            ###   ########.fr        #
+#    Updated: 2026/06/01 12:29:16 by pecavalc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,8 +53,8 @@ LOAD_MAP_OBJS = $(patsubst $(LOAD_MAP_SRCS_DIR)/%.c, \
 
 PUB_LOAD_MAP_HEADER_DIR = include
 PRIV_LOAD_MAP_HEADER_DIR = $(LOAD_MAP_SRCS_DIR)
-LOAD_MAP_HEADERS = $(PUB_LOAD_MAP_HEADER_DIR)/fdf_map.h \
-					$(PRIV_LOAD_MAP_HEADER_DIR)/fdf_map_internal.h
+LOAD_MAP_HEADERS = $(PUB_LOAD_MAP_HEADER_DIR)/load_map.h \
+					$(PRIV_LOAD_MAP_HEADER_DIR)/load_map_internal.h
 
 
 # mlx_handling module
@@ -144,7 +144,7 @@ $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c $(HEADER)
 $(LOAD_MAP_OBJS_DIR)/%.o: $(LOAD_MAP_SRCS_DIR)/%.c $(LOAD_MAP_HEADERS)
 	cc $(CFLAGS) -c $< -o $@
 
-$(MLX_HAN_OBJS_DIR)/%.o: $(LMLX_HAN_SRCS_DIR)/%.c $(MLX_HAN_HEADERS)
+$(MLX_HAN_OBJS_DIR)/%.o: $(MLX_HAN_SRCS_DIR)/%.c $(MLX_HAN_HEADERS)
 	cc $(CFLAGS) -c $< -o $@
 
 $(RENDER_FDF_OBJS_DIR)/%.o: $(RENDER_FDF_SRCS_DIR)/%.c $(RENDER_FDF_HEADERS)
