@@ -105,7 +105,8 @@ sudo apt-get install -y \
   build-essential \
   libx11-dev \
   libxext-dev \
-  zlib1g-dev
+  zlib1g-dev \
+  libbsd-dev
 ```
 
 ### Compile

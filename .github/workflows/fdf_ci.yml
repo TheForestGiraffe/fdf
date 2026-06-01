@@ -19,7 +19,8 @@ jobs:
             build-essential \
             libx11-dev \
             libxext-dev \
-            zlib1g-dev
+            zlib1g-dev \
+            libbsd-dev
 
       - name: Build FdF
         run: make
