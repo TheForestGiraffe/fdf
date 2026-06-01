@@ -93,12 +93,20 @@ Saison, Kid Enigma - The Break Dub - Dub Mix (https://open.spotify.com/track/3ot
 
 ## How to Build
 
-### Requirements
+### Prerequisites
 
-- C compiler (`cc`)
-- `make`
-- MiniLibX (42 version)
-- Linux
+This project uses the Linux version of MiniLibX and requires X11 development libraries.
+
+On Debian/Ubuntu systems, install the required build dependencies:
+
+```bash
+sudo apt-get update
+sudo apt-get install -y \
+  build-essential \
+  libx11-dev \
+  libxext-dev \
+  zlib1g-dev
+```
 
 ### Compile
 
